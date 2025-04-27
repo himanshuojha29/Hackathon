@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/index.css" />
+    <!-- internal css -->
+    <style>
+      html,
+      body {
+        overscroll-behavior: none;
+        height: 100%;
+        width: 100%;
+      }
+
+      .page1 h1::before {
+        content: "FITCROSS";
+        position: absolute;
+        color: #ff1414;
+        top: -4px;
+        left: -4px;
+        -webkit-text-stroke: 2px #ff1414;
+        z-index: -1;
+      }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <!-- Login Modal -->
+    <section>
+      <div
+        id="loginModal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden mx-4"
+      >
+        <div
+          class="bg-white rounded-lg shadow-lg w-full max-w-5xl flex flex-col md:flex-row overflow-hidden relative"
+        >
+          <!-- Close Button -->
+          <button
+            id="closeLogin"
+            class="absolute top-4 right-4 text-2xl text-gray-600 hover:text-[#FF1414]"
+          >
+            &times;
+          </button>
+
+          <!-- Left Side (Login Form) -->
+          <div
+            class="w-full md:w-1/2 p-10 md:p-12 flex flex-col justify-center"
+          >
+            <h2 class="text-3xl font-bold mb-2">WELCOME BACK</h2>
+            <p class="text-gray-500 mb-8">
+              Welcome back! Please enter your details.
+            </p>
+
+            <form class="space-y-6">
+              <div>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-[#FF1414]"
+                />
+              </div>
+
+              <div>
+                <input
+                  type="password"
+                  placeholder="********"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-[#FF1414]"
+                />
+              </div>
+
+              <div class="flex items-center justify-between text-sm">
+                <div class="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    id="remember"
+                    class="h-4 w-4 text-[#FF1414]"
+                  />
+                  <label for="remember" class="text-gray-600"
+                    >Remember me</label
+                  >
+                </div>
+                <a href="#" class="text-[#FF1414] hover:underline"
+                  >Forgot password</a
+                >
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-[#FF1414] hover:bg-[#e01010] text-white py-3 rounded-md transition duration-300"
+              >
+                Sign in
+              </button>
+
+              <button
+                type="button"
+                class="w-full border border-gray-300 flex items-center justify-center py-3 rounded-md space-x-2 hover:bg-gray-100 transition duration-300"
+              >
+                <img
+                  src="https://img.icons8.com/color/48/000000/google-logo.png"
+                  class="h-5 w-5"
+                  alt="Google"
+                />
+                <span class="text-gray-700">Sign in with Google</span>
+              </button>
+
+              <p class="text-center text-sm text-gray-600">
+                Don't have an account?
+                <a href="#" class="text-[#FF1414] hover:underline"
+                  >Sign up for free!</a
+                >
+              </p>
+            </form>
+          </div>
+
+          <!-- Right Side (Image) -->
+          <div class="hidden md:block w-full md:w-1/2">
+            <img
+              src="/images/login-image.png"
+              alt="Login Illustration"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- registration model -->
+    <section class="">
+      <!-- Popup Modal -->
+      <div
+        id="modal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+      >
+        <div
+          class="bg-white rounded-2xl shadow-2xl flex flex-col md:flex-row w-full max-w-4xl relative overflow-hidden"
+        >
+          <!-- Close Button -->
+          <button
+            id="closeModal"
+            class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
+          >
+            ✕
+          </button>
+
+          <!-- Left Side (Form) -->
+          <div class="flex-1 p-8 flex flex-col justify-center">
+            <h2 class="text-3xl font-bold mb-2 text-center md:text-left">
+              Create Account
+            </h2>
+            <p class="text-gray-600 mb-6 text-center md:text-left">
+              Please fill the form to register
+            </p>
+
+            <form class="space-y-4">
+              <input
+                type="text"
+                placeholder="Full Name"
+                class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-red-500"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-red-500"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-red-500"
+              />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-red-500"
+              />
+
+              <button
+                type="submit"
+                class="w-full bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition-all"
+              >
+                Sign Up
+              </button>
+            </form>
+
+            <div class="flex items-center my-6">
+              <hr class="flex-grow border-t border-gray-300" />
+              <span class="mx-3 text-gray-400">OR</span>
+              <hr class="flex-grow border-t border-gray-300" />
+            </div>
+
+            <button
+              class="w-full flex items-center justify-center border border-gray-300 rounded-lg py-3 hover:bg-gray-100 transition-all"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                alt="Google logo"
+                class="w-5 h-5 mr-2"
+              />
+              Sign up with Google
+            </button>
+
+            <p class="text-center text-sm text-gray-600 mt-4">
+              Already have an account?
+              <span class="text-red-500 cursor-pointer">Login</span>
+            </p>
+          </div>
+
+          <!-- Right Side (Image) -->
+          <div
+            class="hidden md:flex flex-1 items-center justify-center bg-gray-100"
+          >
+            <img
+              src="https://img.freepik.com/free-vector/basketball-player-concept-illustration_114360-6544.jpg?w=740&t=st=1714168001~exp=1714168601~hmac=6b1551d6a4a8d014ffbb2d50f8b9f5f19308cbf9c1609e03eb99a1b65aa93b09"
+              alt="Basketball Illustration"
+              class="w-3/4 h-auto object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--cursor -->
+    <div
+      class="cursor h-[20px] w-[20px] bg-[#FF1414] rounded-full fixed z-[99]"
+    ></div>
+
+    <!--cursor-blur -->
+    <div
+      class="cursor-blur h-[200px] w-[200px] bg-[#FF1414] rounded-full fixed blur-[150px] z-[9]"
+    ></div>
+
+    <!--viedo -->
+    <video
+      autoplay
+      muted
+      loop
+      class="fixed top-0 left-0 w-full h-full object-cover z-[-1]"
+    >
+      <source src="/video/3195530-sd_640_360_25fps.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!---  Main ---->
+    <main class="relative bg-black bg-opacity-70">
+      <!-- nav  -->
+      <nav class="bg-transparent text-white text-sm relative">
+        <div
+          class="w-full flex items-center justify-between mx-auto py-8 px-8 md:px-16 relative"
+        >
+          <!-- Logo -->
+          <div class="flex-shrink-0 z-20">
+            <img
+              src="/images/logo2.png"
+              class="h-[3rem] w-[10rem]"
+              alt="FITCROSS LOGO"
+            />
+          </div>
+
+          <!-- Toggler for Mobile -->
+          <div class="flex md:hidden z-20">
+            <button
+              id="toggleNavbar"
+              type="button"
+              class="inline-flex items-center justify-center p-2 w-10 h-10 text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Navigation Links -->
+          <div
+            id="navbar-links"
+            class="hidden flex-col md:flex md:flex-row md:items-center md:justify-center space-y-4 md:space-y-0 md:space-x-8 w-full md:w-auto bg-[#FF1414] md:bg-transparent absolute md:static left-0 mt-4 md:mt-0 p-4 md:p-0"
+          >
+            <ul class="flex flex-col md:flex-row text-center md:space-x-8">
+              <li>
+                <a
+                  href="/html/index.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/html/About.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/html/Services.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/html/Meals.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >Meals</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- login and registrations but -->
+          <div class="hidden md:flex z-20">
+            <!-- Login Button -->
+            <button
+              id="openLogin"
+              class="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition-all mr-3"
+            >
+              Login
+            </button>
+
+            <!-- Register Button -->
+            <button
+              id="openModal"
+              class="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition-all"
+            >
+              Register
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- pagre 1 -->
+      <section
+        class="page1 w-full h-[80vh] relative flex flex-col items-center justify-center text-center px-4 z-1"
+      >
+        <h1
+          class="relative text-4xl sm:text-5xl md:text-6xl lg:text-[90px] text-[#fff] font-black tracking-widest"
+        >
+          FITCROSS
+        </h1>
+        <p
+          class="text-sm sm:text-base md:text-lg pt-5 w-full sm:w-[80%] md:w-[60%] lg:w-[60%] text-white"
+        >
+          Achieve your goals with intelligent BMI insights and custom meals.
+          Designed for both men and women, with calorie-focused plans to suit
+          every lifestyle. Elevate your health with expert-driven nutrition and
+          fitness guidance. Start your transformation — stronger, healthier, and
+          unstoppable.
+        </p>
+        <button
+          class="border-[#FF1414] rounded-xl text-white px-6 py-3 mt-8 hover:bg-transparent hover:text-[#FF1414] transition duration-300 hover: border border-[#FF1414]"
+        >
+          Join us
+        </button>
+      </section>
+
+      <!-- page1.1 -->
+      <section class="page1.1 bg-black text-white py-12 px-4">
+        <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center">
+          Explore <span class="text-white">Our Program</span>
+        </h2>
+
+        <div class="flex flex-wrap justify-center gap-6">
+          <!-- Card 1 -->
+          <div
+            id="card1"
+            class="cardtop bg-red-600 text-white p-6 rounded-xl w-full sm:w-[48%] lg:w-[30%] cursor-pointer"
+          >
+            <div class="text-3xl mb-4">
+              <i class="fas fa-heart-pulse"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              BMI Calculator
+            </h3>
+            <p class="text-sm leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+
+          <!-- BMI Modal (Hidden by default) -->
+          <div
+            id="bmiModal"
+            class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden"
+          >
+            <section
+              class="bg-gray-900 text-white min-h-[80vh] max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl p-4 w-[90%] max-w-2xl relative"
+            >
+              <!-- Close Button -->
+              <button
+                onclick="closeModal()"
+                class="absolute top-2 right-4 text-white text-2xl"
+              >
+                &times;
+              </button>
+
+              <!-- Your Existing BMI Calculator Here -->
+
+              <div
+                class="bg-black p-6 sm:p-8 rounded-2xl shadow-2xl w-full max-w-md sm:max-w-lg mx-auto space-y-6 transition-all duration-300"
+              >
+                <h1
+                  class="text-2xl sm:text-3xl font-bold text-center text-[#FF1414]"
+                >
+                  BMI Calculator
+                </h1>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-1"
+                      >Age</label
+                    >
+                    <input
+                      type="number"
+                      id="age"
+                      class="w-full px-4 py-2 rounded-md bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#FF1414] transition"
+                      placeholder="e.g., 24"
+                    />
+                  </div>
+
+                  <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-1"
+                      >Gender</label
+                    >
+                    <div
+                      class="flex flex-wrap sm:flex-nowrap items-center gap-4 text-gray-200"
+                    >
+                      <label
+                        class="inline-flex items-center gap-1 cursor-pointer hover:text-[#FF1414] transition"
+                      >
+                        <input
+                          type="radio"
+                          name="gender"
+                          value="male"
+                          checked
+                          class="accent-[#FF1414]"
+                        />
+                        Male
+                      </label>
+                      <label
+                        class="inline-flex items-center gap-1 cursor-pointer hover:text-[#FF1414] transition"
+                      >
+                        <input
+                          type="radio"
+                          name="gender"
+                          value="female"
+                          class="accent-[#FF1414]"
+                        />
+                        Female
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-1"
+                      >Height (cm)</label
+                    >
+                    <input
+                      type="number"
+                      id="height"
+                      class="w-full px-4 py-2 rounded-md bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#FF1414] transition"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-1"
+                      >Weight (kg)</label
+                    >
+                    <input
+                      type="number"
+                      id="weight"
+                      class="w-full px-4 py-2 rounded-md bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#FF1414] transition"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  onclick="calculateBMI()"
+                  class="w-full border border-[#FF1414] rounded-xl text-white font-bold py-2 rounded-md transition-colors duration-200"
+                >
+                  Calculate
+                </button>
+
+                <div
+                  id="bmiResult"
+                  class="text-center text-lg sm:text-xl font-bold mt-4 text-white"
+                ></div>
+
+                <div class="relative w-full h-32 sm:h-40 mt-6">
+                  <div
+                    class="absolute w-full h-full flex justify-center items-center"
+                  >
+                    <svg width="100%" height="100%" viewBox="0 0 300 150">
+                      <path
+                        d="M 50 150 A 100 100 0 0 1 250 150"
+                        fill="#FF1414"
+                      />
+                      <path d="M 70 150 A 80 80 0 0 1 230 150" fill="#f87171" />
+                      <path d="M 90 150 A 60 60 0 0 1 210 150" fill="#facc15" />
+                      <path
+                        d="M 110 150 A 40 40 0 0 1 190 150"
+                        fill="#4ade80"
+                      />
+                      <line
+                        id="pointer"
+                        x1="150"
+                        y1="150"
+                        x2="150"
+                        y2="50"
+                        stroke="white"
+                        stroke-width="4"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <div
+                  id="bmiCategory"
+                  class="text-center text-[#FF1414] font-medium mt-2"
+                ></div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="cardtop bg-zinc-900 p-6 rounded-xl w-full sm:w-[48%] lg:w-[30%]"
+          >
+            <div class="text-3xl text-red-600 mb-4">
+              <i class="fas fa-apple-alt"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Nutrition</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+              venenatis, nunc a pretium viverra.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="cardtop bg-zinc-900 p-6 rounded-xl w-full sm:w-[48%] lg:w-[30%]"
+          >
+            <div class="text-3xl text-red-600 mb-4">
+              <i class="fas fa-dumbbell"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Muscle Gain</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+              venenatis, nunc a pretium viverra.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- page2 -->
+      <section
+        class="page2 min-h-screen w-full relative px-4 md:px-6 flex flex-col md:flex-row items-center justify-evenly gap-6 md:gap-0"
+      >
+        <!-- Girls Section -->
+        <div
+          class="elem h-[60vh] md:h-[80vh] w-full md:w-[45%] overflow-hidden rounded-[10px] relative group"
+        >
+          <!-- Content overlay -->
+          <div
+            class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-4"
+          >
+            <h2 class="font-extrabold text-[30px] md:text-[50px] mb-4">
+              FOR GIRLS
+            </h2>
+            <p class="text-sm md:text-base max-w-[300px] mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+              vel facilis provident excepturi debitis optio!
+            </p>
+            <button
+              class="bg-[#FF1414] px-6 py-3 hover:bg-transparent hover:text-[#FF1414] transition duration-300 border border-[#FF1414]"
+            >
+              <a href="/html/ForGirls.html">Join us</a>
+            </button>
+          </div>
+          <!-- Image with hover scale -->
+          <img
+            src="/images/girl.webp"
+            alt="For Girls"
+            class="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+          />
+        </div>
+
+        <!-- Boys Section -->
+        <div
+          class="elem h-[60vh] md:h-[80vh] w-full md:w-[45%] overflow-hidden rounded-[10px] relative group"
+        >
+          <!-- Content overlay -->
+          <div
+            class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-4"
+          >
+            <h2 class="font-extrabold text-[30px] md:text-[50px] mb-4">
+              FOR BOYS
+            </h2>
+            <p class="text-sm md:text-base max-w-[300px] mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+              vel facilis provident excepturi debitis optio!
+            </p>
+            <button
+              class="bg-[#FF1414] px-6 py-3 hover:bg-transparent hover:text-[#FF1414] transition duration-300 border border-[#FF1414]"
+            >
+              <a href="/html/ForBoys.html">Join us</a>
+            </button>
+          </div>
+          <!-- Image with hover scale -->
+          <img
+            src="/images/boys.webp"
+            alt="For Boys"
+            class="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+          />
+        </div>
+      </section>
+      <!-- page3-->
+      <section class="bg-black text-white py-16 px-4">
+        <div
+          class="flex flex-col lg:flex-row items-center max-w-7xl mx-auto gap-10"
+        >
+          <!-- Left: Image -->
+          <div
+            class="relative group lg:w-1/2 w-full h-[70vh] rounded-xl overflow-hidden cursor-pointer transform transition duration-500 hover:scale-105 hover:rotate-1"
+          >
+            <img
+              src="/images/about2.png"
+              alt="Strength Training"
+              class="w-full h-full object-cover"
+            />
+
+            <!-- Overlay Text -->
+            <div
+              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"
+            >
+              <!-- <h2 class="text-white text-[40px] font-bold">FITCROSS</h2> -->
+              <img class="w-35 h-14" src="/images/logo2.png" alt="" />
+            </div>
+          </div>
+
+          <!-- Right: Text Content -->
+          <div class="lg:w-1/2 w-full px-10">
+            <div
+              class="inline-block px-4 py-2 border border-[#FF1414] text-[#FF1414] rounded-md text-sm mb-4"
+            >
+              Strength Training
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 leading-snug">
+              Crush any strength program with our suite of strength equipment
+            </h2>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-[#FF1414]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.879-7.879a1 1 0 011.414 0z"
+                  />
+                </svg>
+                <span>Fully fitted powerlifting and strongman section</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-[#FF1414]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.879-7.879a1 1 0 011.414 0z"
+                  />
+                </svg>
+                <span>Olympic lifting platforms, weights, and bars</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-[#FF1414]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.879-7.879a1 1 0 011.414 0z"
+                  />
+                </svg>
+                <span>Dumbbells ranging 5lbs–250lbs</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--page4-->
+      <section class="page3 text-white py-16 px-4">
+        <div
+          class="max-w-6xl mx-auto text-center flex flex-col items-center md:justify-center"
+        >
+          <h2 class="text-4xl md:text-5xl font-extrabold mb-7">OUR FEATURES</h2>
+          <p class="text-gray-300 text-base md:text-lg mb-12">
+            There are many variations of passages of lorem Ipsum available, but
+            the majority have suffered alteration.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row sm:flex-wrap sm:justify-center gap-20"
+          >
+            <!-- Feature 1 -->
+            <div
+              class="card flex-1 min-w-[200px] max-w-[250px] flex flex-col items-center md:justify-center text-center"
+            >
+              <i
+                class="fas fa-dumbbell text-red-600 text-6xl mb-4 transition-transform duration-300 hover:scale-110"
+              ></i>
+              <h3 class="text-xl font-bold mb-2">Weightlifting</h3>
+              <p class="text-gray-300 text-sm">
+                There are many variations of passages of lorem Ipsum available.
+              </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div
+              class="card flex-1 min-w-[200px] max-w-[250px] flex flex-col items-center text-center"
+            >
+              <i
+                class="fas fa-user-ninja text-red-600 text-6xl mb-4 transition-transform duration-300 hover:scale-110"
+              ></i>
+              <h3 class="text-xl font-bold mb-2">Specific Muscles</h3>
+              <p class="text-gray-300 text-sm">
+                There are many variations of passages of lorem Ipsum available.
+              </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div
+              class="card flex-1 min-w-[200px] max-w-[250px] flex flex-col items-center text-center"
+            >
+              <i
+                class="fas fa-hand-rock text-red-600 text-6xl mb-4 transition-transform duration-300 hover:scale-110"
+              ></i>
+              <h3 class="text-xl font-bold mb-2">Flex Your Muscles</h3>
+              <p class="text-gray-300 text-sm">
+                There are many variations of passages of lorem Ipsum available.
+              </p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div
+              class="card flex-1 min-w-[200px] max-w-[250px] flex flex-col items-center text-center"
+            >
+              <i
+                class="fas fa-bicycle text-red-600 text-6xl mb-4 transition-transform duration-300 hover:scale-110"
+              ></i>
+              <h3 class="text-xl font-bold mb-2">Cardio Exercises</h3>
+              <p class="text-gray-300 text-sm">
+                There are many variations of passages of lorem Ipsum available.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--page5-->
+      <section class="px-4 py-16 sm:px-6 lg:px-20 py-10">
+        <div
+          class="bg-[#0d0d0d] px-6 py-10 rounded-2xl flex flex-col md:flex-row md:items-center md:justify-between"
+        >
+          <!-- Text Section -->
+          <p
+            class="text-white text-2xl font-semibold text-center md:text-left mb-6 md:mb-0"
+          >
+            Enhance user experience with healthy nutrition tips,<br
+              class="hidden md:block"
+            />
+            support resources, and social elements.
+          </p>
+
+          <!-- Button -->
+          <div class="flex justify-center lg:justify-end">
+            <a
+              href="#"
+              class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition"
+            >
+              Join us
+            </a>
+          </div>
+        </div>
+      </section>
+      <!--page6-->
+      <section class="px-4 sm:px-6 lg:px-20 py-16 mb-5 bg-black text-white">
+        <!-- Heading -->
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-red-600">Why Choose Us</h2>
+          <p class="text-lg mt-4 text-gray-300">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br />
+            sed do eiusmod tempor incididunt ut labore et
+          </p>
+        </div>
+
+        <!-- Content -->
+        <div class="flex flex-col lg:flex-row gap-10">
+          <!-- Left Section (Text Features) -->
+          <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <!-- Feature Item -->
+            <div class="flex items-start gap-4">
+              <div class="bg-red-600 text-white p-3 rounded-full text-xl">
+                <i class="fas fa-dumbbell"></i>
+              </div>
+              <div>
+                <h3 class="text-red-500 font-bold text-lg">
+                  High-Quality Equipment
+                </h3>
+                <p class="text-gray-300">
+                  State-of-the-art equipment for all your workout needs.
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature Item -->
+            <div class="flex items-start gap-4">
+              <div class="bg-red-600 text-white p-3 rounded-full text-xl">
+                <i class="fas fa-award"></i>
+              </div>
+              <div>
+                <h3 class="text-red-500 font-bold text-lg">
+                  Certified Trainers
+                </h3>
+                <p class="text-gray-300">
+                  Train with professionals who know your goals.
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature Item -->
+            <div class="flex items-start gap-4">
+              <div class="bg-red-600 text-white p-3 rounded-full text-xl">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <div>
+                <h3 class="text-red-500 font-bold text-lg">
+                  Health & Wellness
+                </h3>
+                <p class="text-gray-300">
+                  Programs to boost both your mind and body.
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature Item -->
+            <div class="flex items-start gap-4">
+              <div class="bg-red-600 text-white p-3 rounded-full text-xl">
+                <i class="fas fa-users"></i>
+              </div>
+              <div>
+                <h3 class="text-red-500 font-bold text-lg">
+                  Community Support
+                </h3>
+                <p class="text-gray-300">
+                  Engage in a supportive and empowering gym family.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Section (Images) -->
+          <div class="flex-1 grid grid-cols-2 gap-6">
+            <img
+              src="/images/rowgril.webp"
+              class="rounded-xl w-full h-auto object-cover cursor-pointer transform transition duration-500 hover:scale-105 hover:rotate-1"
+            />
+            <img
+              src="/images/barbel.jpeg"
+              class="rounded-xl w-full h-auto object-covercursor-pointer transform transition duration-500 hover:scale-105 hover:-rotate-1"
+            />
+            <img
+              src="/images/team.webp"
+              class="rounded-xl w-full h-auto object-cover transform transition duration-500 hover:scale-105 hover:rotate-1"
+            />
+            <img
+              src="/images/stufgym.jpeg"
+              class="rounded-xl w-full h-auto object-cover transform transition duration-500 hover:scale-105 hover:-rotate-1"
+            />
+          </div>
+        </div>
+      </section>
+      <!--page7-->
+      <section class="bg-red-600 py-16 mt-5 rounded-3xl mx-4 md:mx-10">
+        <div class="text-center px-4 md:px-10">
+          <h2 class="text-white text-2xl md:text-3xl font-bold mb-2">
+            Subscribe our fitness tips
+          </h2>
+          <p class="text-white opacity-80 mb-6">
+            Clearly communicate the benefits of subscribing, such as exclusive
+            content and breaking news.
+          </p>
+
+          <!-- Input + Button -->
+          <form
+            class="flex flex-col md:flex-row items-center justify-center max-w-xl mx-auto gap-4"
+          >
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              class="w-full md:w-2/3 p-4 rounded-xl text-gray-700 placeholder-gray-500 outline-none"
+            />
+            <button
+              type="submit"
+              class="bg-black text-white px-6 py-3 rounded-xl font-semibold transition hover:scale-105 duration-300 w-full md:w-auto text-center"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Footer-->
+      <footer class="footer bg-black text-white py-16 px-4 md:px-20">
+        <div class="flex flex-wrap gap-10 justify-between">
+          <!-- Widget 1 -->
+          <div class="footer-widget w-full md:w-[30%] space-y-4">
+            <h2 class="text-3xl font-bold text-white">
+              logo <span class="text-red-600">.</span>
+            </h2>
+            <p class="text-sm">
+              5th flora, 700/D kings road, green lane New York-1782
+            </p>
+            <p class="text-sm">+10 367 826 2567</p>
+            <p class="text-sm text-red-500">contact@carpenter.com</p>
+            <div class="flex space-x-4 pt-2 text-xl">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-pinterest"></i>
+              <i class="fab fa-youtube"></i>
+            </div>
+          </div>
+
+          <!-- Widget 2 -->
+          <div class="footer-widget w-full md:w-[30%] space-y-4">
+            <h3 class="text-lg font-bold text-red-600">Useful Links</h3>
+            <ul class="space-y-2 text-sm">
+              <li>Pricing</li>
+              <li>About</li>
+              <li>Gallery</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+
+          <!-- Widget 3 -->
+          <div class="footer-widget w-full md:w-[30%] space-y-4">
+            <h3 class="text-lg font-bold text-red-600">Subscribe</h3>
+            <div
+              class="flex items-center bg-gray-100 text-black rounded-full overflow-hidden"
+            >
+              <input
+                type="email"
+                placeholder="Enter your mail"
+                class="px-4 py-2 outline-none bg-transparent flex-1"
+              />
+              <button class="bg-red-600 text-white px-5 py-2 rounded-full">
+                Subscribe
+              </button>
+            </div>
+            <p class="text-sm text-gray-400">
+              Esteem spirit temper too say adieus who direct esteem esteems
+              luckily.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- gsap script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
+      integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- scrollTrigger script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"
+      integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- self script -->
+    <script src="/js/script.js"></script>
+  </body>
+</html>

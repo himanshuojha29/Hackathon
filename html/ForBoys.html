@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- internal css -->
+    <style>
+      html,
+      body {
+        overscroll-behavior: none;
+        height: 100%;
+        width: 100%;
+      }
+
+      .page1 h1::before {
+        content: "FOR BOYS";
+        position: absolute;
+        color: #ff1414;
+        top: -4px;
+        left: -4px;
+        -webkit-text-stroke: 2px #ff1414;
+        z-index: -1;
+      }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <!-- Login Modal -->
+    <section>
+      <div
+        id="loginModal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden mx-4"
+      >
+        <div
+          class="bg-white rounded-lg shadow-lg w-full max-w-5xl flex flex-col md:flex-row overflow-hidden relative"
+        >
+          <!-- Close Button -->
+          <button
+            id="closeLogin"
+            class="absolute top-4 right-4 text-2xl text-gray-600 hover:text-[#FF1414]"
+          >
+            &times;
+          </button>
+
+          <!-- Left Side (Login Form) -->
+          <div
+            class="w-full md:w-1/2 p-10 md:p-12 flex flex-col justify-center"
+          >
+            <h2 class="text-3xl font-bold mb-2">WELCOME BACK</h2>
+            <p class="text-gray-500 mb-8">
+              Welcome back! Please enter your details.
+            </p>
+
+            <form class="space-y-6">
+              <div>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-[#FF1414]"
+                />
+              </div>
+
+              <div>
+                <input
+                  type="password"
+                  placeholder="********"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-[#FF1414]"
+                />
+              </div>
+
+              <div class="flex items-center justify-between text-sm">
+                <div class="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    id="remember"
+                    class="h-4 w-4 text-[#FF1414]"
+                  />
+                  <label for="remember" class="text-gray-600"
+                    >Remember me</label
+                  >
+                </div>
+                <a href="#" class="text-[#FF1414] hover:underline"
+                  >Forgot password</a
+                >
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-[#FF1414] hover:bg-[#e01010] text-white py-3 rounded-md transition duration-300"
+              >
+                Sign in
+              </button>
+
+              <button
+                type="button"
+                class="w-full border border-gray-300 flex items-center justify-center py-3 rounded-md space-x-2 hover:bg-gray-100 transition duration-300"
+              >
+                <img
+                  src="https://img.icons8.com/color/48/000000/google-logo.png"
+                  class="h-5 w-5"
+                  alt="Google"
+                />
+                <span class="text-gray-700">Sign in with Google</span>
+              </button>
+
+              <p class="text-center text-sm text-gray-600">
+                Don't have an account?
+                <a href="#" class="text-[#FF1414] hover:underline"
+                  >Sign up for free!</a
+                >
+              </p>
+            </form>
+          </div>
+
+          <!-- Right Side (Image) -->
+          <div class="hidden md:block w-full md:w-1/2">
+            <img
+              src="/images/login-image.png"
+              alt="Login Illustration"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- registration model -->
+    <section class="">
+      <!-- Popup Modal -->
+      <div
+        id="modal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+      >
+        <div
+          class="bg-white rounded-2xl shadow-2xl flex flex-col md:flex-row w-full max-w-4xl relative overflow-hidden"
+        >
+          <!-- Close Button -->
+          <button
+            id="closeModal"
+            class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
+          >
+            ✕
+          </button>
+
+          <!-- Left Side (Form) -->
+          <div class="flex-1 p-8 flex flex-col justify-center">
+            <h2 class="text-3xl font-bold mb-2 text-center md:text-left">
+              Create Account
+            </h2>
+            <p class="text-gray-600 mb-6 text-center md:text-left">
+              Please fill the form to register
+            </p>
+
+            <form class="space-y-4">
+              <input
+                type="text"
+                placeholder="Full Name"
+                class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-red-500"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-red-500"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-red-500"
+              />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-red-500"
+              />
+
+              <button
+                type="submit"
+                class="w-full bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition-all"
+              >
+                Sign Up
+              </button>
+            </form>
+
+            <div class="flex items-center my-6">
+              <hr class="flex-grow border-t border-gray-300" />
+              <span class="mx-3 text-gray-400">OR</span>
+              <hr class="flex-grow border-t border-gray-300" />
+            </div>
+
+            <button
+              class="w-full flex items-center justify-center border border-gray-300 rounded-lg py-3 hover:bg-gray-100 transition-all"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                alt="Google logo"
+                class="w-5 h-5 mr-2"
+              />
+              Sign up with Google
+            </button>
+
+            <p class="text-center text-sm text-gray-600 mt-4">
+              Already have an account?
+              <span class="text-red-500 cursor-pointer">Login</span>
+            </p>
+          </div>
+
+          <!-- Right Side (Image) -->
+          <div
+            class="hidden md:flex flex-1 items-center justify-center bg-gray-100"
+          >
+            <img
+              src="https://img.freepik.com/free-vector/basketball-player-concept-illustration_114360-6544.jpg?w=740&t=st=1714168001~exp=1714168601~hmac=6b1551d6a4a8d014ffbb2d50f8b9f5f19308cbf9c1609e03eb99a1b65aa93b09"
+              alt="Basketball Illustration"
+              class="w-3/4 h-auto object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--cursor -->
+    <div
+      class="cursor h-[20px] w-[20px] bg-[#FF1414] rounded-full fixed z-[99]"
+    ></div>
+
+    <!--cursor-blur -->
+    <div
+      class="cursor-blur h-[200px] w-[200px] bg-[#FF1414] rounded-full fixed blur-[150px] z-[9]"
+    ></div>
+
+    <!--viedo -->
+    <video
+      autoplay
+      muted
+      loop
+      class="fixed top-0 left-0 w-full h-full object-cover z-[-1]"
+    >
+      <source src="/video/3195530-sd_640_360_25fps.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!---  Main ---->
+    <main class="relative bg-black bg-opacity-70">
+      <!-- nav  -->
+      <nav class="bg-transparent text-white text-sm relative">
+        <div
+          class="w-full flex items-center justify-between mx-auto py-8 px-8 md:px-16 relative"
+        >
+          <!-- Logo -->
+          <div class="flex-shrink-0 z-20">
+            <img
+              src="/images/logo2.png"
+              class="h-[3rem] w-[10rem]"
+              alt="FITCROSS LOGO"
+            />
+          </div>
+
+          <!-- Toggler for Mobile -->
+          <div class="flex md:hidden z-20">
+            <button
+              id="toggleNavbar"
+              type="button"
+              class="inline-flex items-center justify-center p-2 w-10 h-10 text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Navigation Links -->
+          <div
+            id="navbar-links"
+            class="hidden flex-col md:flex md:flex-row md:items-center md:justify-center space-y-4 md:space-y-0 md:space-x-8 w-full md:w-auto bg-[#FF1414] md:bg-transparent absolute md:static left-0 mt-4 md:mt-0 p-4 md:p-0"
+          >
+            <ul class="flex flex-col md:flex-row text-center md:space-x-8">
+              <li>
+                <a
+                  href="/html/index.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/html/About.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/html/Services.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/html/Meals.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >Meals</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- login and registrations but -->
+          <div class="hidden md:flex z-20">
+            <!-- Login Button -->
+            <button
+              id="openLogin"
+              class="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition-all mr-3"
+            >
+              Login
+            </button>
+
+            <!-- Register Button -->
+            <button
+              id="openModal"
+              class="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition-all"
+            >
+              Register
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- pagre 1 -->
+      <section
+        class="page1 w-full h-[80vh] relative flex flex-col items-center justify-center text-center px-4 z-1"
+      >
+        <h1
+          class="relative text-4xl sm:text-5xl md:text-6xl lg:text-[90px] text-[#fff] font-black tracking-widest"
+        >
+          FOR BOYS
+        </h1>
+        <p
+          class="text-sm sm:text-base md:text-lg pt-5 w-full sm:w-[80%] md:w-[60%] lg:w-[60%] text-white"
+        >
+          Achieve your goals with intelligent BMI insights and custom meals.
+          Designed for both men and women, with calorie-focused plans to suit
+          every lifestyle. Elevate your health with expert-driven nutrition and
+          fitness guidance. Start your transformation — stronger, healthier, and
+          unstoppable.
+        </p>
+        <button
+          class="border-[#FF1414] rounded-xl text-white px-6 py-3 mt-8 hover:bg-transparent hover:text-[#FF1414] transition duration-300 hover: border border-[#FF1414]"
+        >
+          Join us
+        </button>
+      </section>
+
+      <!-- page1.1 -->
+
+      <section
+        class="bg-black text-orange-400 font-sans min-h-screen flex flex-col"
+      >
+        <div class="container mx-auto px-4 py-8 text-center flex-1">
+          <header class="mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold">For Male</h1>
+            <h2 class="text-2xl md:text-3xl mt-2">Workouts</h2>
+          </header>
+
+          <p class="text-gray-400 text-base md:text-lg mb-12 max-w-2xl mx-auto">
+            Kickstart your fitness journey with these 9 powerful exercises.
+            Perform 3 sets of 10 reps each, no rest!
+          </p>
+
+          <!-- EXERCISES SECTION -->
+          <div class="flex flex-wrap justify-center gap-8">
+            <!-- Exercise 1 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSe-Sqe12Hn5OWcF4wh51uEf-EMX_lNpunCw&s"
+                  alt="Box Squats"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 1: Box Squats
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 2 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIprXavM9isCr7UqjP2IMVwaIkqdKIfbOYGQ&s"
+                  alt="Lunges"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 2: Lunges
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 3 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="data:image/jpeg;base64,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"
+                  alt="Deadlifts"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 3: Deadlifts
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 4 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1dadpZha53rFQoFcwEnVTi9fijlvkqLm2SA&s"
+                  alt="Knee Jumps"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 4: Knee Jumps
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 5 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlbIs9A4kE4O98mBn15zAA0zElnxHmhQXQww&s"
+                  alt="Hip Thrust"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 5: Hip Thrust
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 6 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIur82ZtK28clux8KckG7vd7FafyJ20U0Bgw&s"
+                  alt="Leg Kicks"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 6: Leg Kicks
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 7 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="data:image/jpeg;base64,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"
+                  alt="Bulgarian Split Squat"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 7: Bulgarian Split Squat
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 8 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdyWrldekFho-4ZUKBBrT17Xhn9BvpCj9MUw&s"
+                  alt="Sumo Deadlift"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 8: Sumo Deadlift
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 9 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiRSEWQ0iQNkweuxTFy50opo3xZABe-EEZ9g&s"
+                  alt="Step Ups"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 9: Step Ups
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+              <!-- Exercise 1 -->
+              <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSe-Sqe12Hn5OWcF4wh51uEf-EMX_lNpunCw&s"
+                  alt="Box Squats"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 1: Box Squats
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 2 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIprXavM9isCr7UqjP2IMVwaIkqdKIfbOYGQ&s"
+                  alt="Lunges"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 2: Lunges
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 3 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSExIWFhUXGBgXFxgYFRUVGhYYFRUWFxgVFxUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGy0lHyUtLy0tLS0tLS0tLS0tLS0tLS0tLS0vLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgAEAQIDBwj/xABIEAACAAQEAwUEBgcGBAcBAAABAgADBBEFEiExBkFREyJhcZEygaGxBxRSwdHwFSNCU3KSohZDYoLC4VRjk7IkM1Wj0tPxF//EABkBAAMBAQEAAAAAAAAAAAAAAAABAgMEBf/EACYRAAICAgIBBAIDAQAAAAAAAAABAhEDEiExBBMiQVEycRRhgSP/2gAMAwEAAhEDEQA/APFwUPhG6r0aKcS8BOpfGYeMZ7Y8xFJZpHONxUtAKi4JwjbtR1ik1RflG9NLvvCCjeZPJ0EX6OhmWzHSO9LTDe0EO1NtdFgCiikshr2vHWlupJ2i3T07OMyqSI5ggnLzHKADa942Ajn4R0EIZap66anszGHvPygtTcVVC+1lceIsfWAIjYQqQ02Nq8WSmUh5Nj1FjAulY1DFZk4oh2XTbpcwIAjoqwtR2NdPw1LUd3JMHja/rFTEMDkqpdgZYGpN+6IAVVcZKFgxB2Fidz4QsTqia+sx2bnqSbn+HYDn74En9j4GGbVU4OUTwR1KkA+RjZkLIWl2cdUYH79IUUBubg3PO+v53i7Il7lbhl1zWFxsLBhz1/NoskM4ezI17WPiPxg5/aCZazqrDyiphOJM8vJNQO17KxsDf7LX5/nWLScMzSSWuqn7OsKwp/BnNQzhaZKCt1tb4xwm8Gyn1kT7eBN4xO4emr7LBh46GKr0E+Wb5WHiphqQV9g3FMNqab2wGHUH7oHjFB+0IL4jUTHXK7nTrAeZKlrq0Mk0atDEBL68ouphLnVjlEGqWko5iKbZGtvt8Y0q8Bdl7k/MBqAflpBQUCP0XK/ej1WJFv8ARlR+7T1H4RIKYCfGYkSAokYjMSACCCtOuggWINSl0EAmEqRdIr4rihUCWVuIuUg0gJxD7YiQLlHxK0tSq7RKTiBEYsUuTzhdjMVQxgmYhLmMWvYmOst/suIWoyCRsYKENSzXHjHQVXUQrpVuNmMWZeLuN7GFQDKlQp5xYWYoF7/noBzMLkvGFPtJF6TXSmGhseXnCoCrUK8xjMN7ahdO6o89uR9L9BFeol31FhqQAN7C2pHK8ejYSUXDwm4YzHNxuGY5bj+EKPdHnlU4K5SBdMwB6hWBHvsxHkBDKOtDTgnv3IHr5Xg1w7g6VAOYsoLnIBl5aA626+O8CZaWlXBN2sPU2v8AGDuGV4lBUMtltse64I8r3HnrHNOTp0dmOMVVhadwTOyl0mI9gSNSpLKCQCuozXHWOVJjs4KrK9wQCAwvoReGzCsXl2uzqpIBGYqC1gDYXygbnx5+EIsuXlRV6KB6CLxy2XJlngoNUHJfFJOkyUGHgfuMWpGL0rn2innt+EKrRzIi9UYbMccRlyRLMy6TFHleErEqGXPUmRJYfAfGNKgC0UlxWbKBCPYeQPzENJoTaCNNgE4yxZxpyOkc59BOl/snzG0XcAx0y7s65wfIH8IYZeN0bizXlk9QfmNILaBJMSPrr/aPxiQ2fV6D98PWJBuGp5RGYkSNAJEAiRIAMgawwyZegheTcecNFONB5RLEXJC6QA4iHfEMcoaQv8SDviEuwA0SJGYsCRIkSACRIyOkNOD8GvMXPOJljfKB3/ffRfLU+URKcYq2XDHKbqKFWNhHo1PwxTDaTfxYs3zNvhGakJTgLKRUbvNdRY+zZdd+RjOOeLdI1n40oxtsG0uJFaWWjAqQlrMCt7E2IvuCLGFsKSQbHKzHWxsbEEgHa+3rD7wlXy3NU1RlbubOAQ2Vm3DaaZx6xX+uS51I6ZR+qe6gAAANzA5c4by/ARw2rsD0kpXaUl9C4v4BVY/MCCzcOIWBNkOne1u1oD4Zo6npc+XL8IPYhidmRpYExgCChLDpYiw8DHNPZOonZDVq5GeKsMFN2HfYrMtvbLlVA7N1vnsvlfrAdqkH2XBjt9I+KPMdJThQ0mSqtkYlSZrLMA1A1C2v4kwjZiNiY6cUfajhzyubocTPbzjH1nqIVErJg2YxYTFpg3sY0oxGGYQ4sIHT5EZpsTQoTs/SLsnE6bs7OO/1tf4wAcqTRbR0YxiXPk9no3eisZxgAsXiRV+seESAQvRIgiRRRIkZiQCIm484aqcaDyhWTcQ3Uq6DyiWBdlDSF3ib2hDMq6QtcTjvCBAwJEiRmKAkGuGOHZlY5AOWWgvMfoDsB1YwFj3HhXBuww+TKA/WTv1j6a3mC+vkuVYjJLVcGmKClLnoWaHDJcjSUm37ZsXPjm+4WEGZAZkBBv15GLE+UizTLGyfOMSwASRHlzbb5PWiklwUp8xwCLaeGsDqWWZwaYw0Vm38Elj5kwxSydhzHxjTDKe8uZcC7Mb9L3Kn/tjXA7Zj5P4nnby7mZ/hmH0YsPuWOcqpMtyV2Isw6j8YL1WGus6YoFw+a3mTmUe8gD3wMl0xZgApZjsACbnpYRuqMqZxSZYr/iva/nYwWopoRzNeTKZJS53zAHMLhVC8yxJAHnrDThnB8sq0uqlkzBKZxuuXRSuV1tqCWBF/MbQV/wD5pTTJE1UZlJ1R87PlK3yhlOhXU3G/jtA2uGJbK0jxmqmlw8xjqzjmT+y3M6m2gigYIYvRPImvJmKVeWcrC99bDvA8wdCD0IgeY610cL75NYkZiQAYjEbRiADEbLOYczGsYhDOv1husSOUSAKNltGI3uI0hiNgIhEQRsIBGqbjzh1oE7q+UJijUecPmGS+6vlEyGjtNW1oV+KR3lhvrVtaFLirdYSGwDEtEixRUrzZiSkF3chVHieZPIDcnkBFkl/hXBzV1cmn1szXffRF7zm/LQEeZEe//WFDTHFrSksOmY8vdlHrCXwjwu2HSZs+fbt3HZgD+7UG7DNsS3cNxyt4xzxDGGk08yXa4m3IYcmIAsfC0cmXJc6O7BiqFsHrXFmZr+0TF6TV2G8KkmoIEaVWLFR53t423+Y9Yw9Ns6fVSXI+UNQCYL4dT/q9ObH+pifvjzXA8UdmsNybDzOgj1rCWFlToAPO0Xig1JmPkZFKKoVJ2F9o7hyVABObnoLj4wJop6pOE9UbODY5WAW50LZSpsT528oZuKO7ShwbFsqn3Cx/7TCpgzFXF9Rzibas2STSPQqCp7QMOksn3zXNyT1JQmO+C4kEcqdmCt/Mi3gRw2/cmzOTTLL/AAIAv/dmherMWyTUHMKB7gzAfACLlagmYxaeVoJfTXgiPTJVoBnlFUY82lTDZQeuVytv4mjxMx7bxhiwbCZ9z7QRB5mYny390eJGOjx5bRObyY6zNYkZjEbGBIkZiQCNTGBGxjBgGXMsnr84kUYzAFFiYyZBYa8zHCOoG0c7Q2JMgjdYwBHRRCEzVRqPMR6NhMvRfKEGVKuR5j5x6bgci4HlESKiV8XSxEJvFQ1WHviBLMsI/FY9mCI5AGnks7Kii7MQoHiTYR6Nh+HJSJ3ELHQu5OVmIIIt9lQRcLz59QrcGKizjPcgCWDluQLzGBAAvzyhvhHXEOJZjTLSwDyF7tcnTug8td7a9BtFgj1HjLEEankFdBMOcDvDut3hcHUaW05bQDkGW65W2jpxnrMlSrkmWii++yga+hgfhINjfrHmZeWetj4VFimopag3VfDS/oY6z+HFn0aowIszTJTBblQ2lt9QcoPp0jWsmBZdybeJ0t43inieN018stJthzlT5lgAptqDdje2gAEaYI3yzHyJ68ID0GHtSzO+rBuRIAFvAa6+N/SHHDcZAIN4TKjEM+uRgBsXmM7HxsTzMd5VUAOdyL7cuZjq1OJyDeN18yaiy1BZZbuzWuTZtUJA/Z70wX2uB1Fx9HOIYKgu7aKo5/nryik9SL5gfZt3hfQnbXrEm8RhBczXc/ZDs3rc2EZvDbs2j5DiqPQGnJT0+UsLItieRY6sfexJjzbsJ82azhCc2qgAk5VAA08gI4VmJzJ7S+0Jy6MEB07wuL9TpuYeeEaoCfKHmNN9VbmPdEZZa8IvDDbliTxhOnIsqlmAqAonEHmXuF05WW/vJhWh7+mOYv15LbiQgP8APMtCKguY6MP4I5c9+ozQxiNxKJbLfcwTxjAzIVWzhs3hbly11jQgFRm4jGQ84zVEE90W+EAEMaGOksaRHWARyiRtEgGPtVwDNEunyOrPNIW3sgFuZPQfdHZvoprh+1IPlMf70ELw4iqVEkCa15ZBQ3vYjbeGJPpHrwLF1Y+MtPuAgqRNxK8z6NK8f3St5TZf+oiODcA143pm9zS2+TQVlfSbXDdJJ80YfJ4dOFeLJtShZ5csEX9nNy8yYltopKL6PM14RrFIvSzdxtLY8/CPSOH8JcJdlK+YI+cH5OM3Nig/m/2jP6bR8ygG46xDdmiikI/FSWZYReJ5JbLaHzi1rsvn90EMFxnCpchEqUlh9cxmSO0zG51zBTpa2nKHF0TJWzzzginsZtxqAhF+Wrgkeqw20lInao2QXzKL2HMiGdqzBHluJUymlsykBgvZW5i+g0uBASjl/rEBFwCD4nL3ou+AS6Rzx6gPadqxuzgsAP2VBsNefWBZcJrcAH86HnBiuLI1OH5pl68zYH3RU4ww21I0xR7DofcTl/1CPNcbnR6u1QsWOLMV/VLLXdjr4KNbHxJ+RgTRzRbfL11tHf6oJqkNuefTpAh6d5T5Ty18CI74Y1GNHm5J7ysOgqxsNuZ6xbliVcs5sBpoTe3Rfn4bwrmcR4euvkI1eYx3Jt0J390VRmPLPhtRJ+rs/ZNe6PyDWt39bMPS3K1zCViuFzKea0mYBmW2oN1ZSLq6tzUjYx0l6g6DwFoJU9N2gWW50Gktj+xc3yE8kJPuJv1vQmrKEpu7LPgo9GmCG/h6faajHYMpPlcX+F4H45wnU0ckPPlFFMwKCbakqzW0J+yTFKmrMpt12jkzRs6/HlSHvi3iKhk1BlVNPnbKrZuzRxY3sNTfkeULOJYrg7y27OSFe2lpRU+4qLCNvpIwtphk1YBtMTIwI9koSVv5hj/LCdT4c2bUEacxGuFLRGOe1kkgbM3iEk7kn4x2qZXetEFO3SNzGziDGHjuZB6RpMlm20AWZknSNJ8byRHWevcBtqDCF8m/1SZ+4b0MSO36cqPtD+WJCKKcybdh0EEGqgNheBhK5x00hxPDhKCYq2BHIW+Eb44ORjkkopCzMnsfCPR/o0mHsjfq3zhKn4cV5Q48A91GHiYjNBxQ8UrYzTp9iYEUVV+sPjHXEZ2pgTImd6OVHRZd4je5WE3iTZYZscn2ANrwrYpNEy2Y5fP/APY0giZA2mmcusO3A2MXZZEw95PYPVLEZfErf08oUZFGDqHEE8FkKtTLmFx3ZiHT+IaRbi6ZMHTQ3cYVhLS7crn0MGKU/WKSbL3LIbedtPiBCtjpvOC+dvfrBng6pK3VhtdT03JH3x5knTs9iKtNC7hkgG1l0g3xBwws2keZLUdpLUuo5kKLsnvF7eIECOHsQSWy5rFSN+kekYbNUgMu1xp4GPSZ5SPnwa639PxjtLlX5RviNOJc6agBAWY6r/CHIX4ARiS2wIv5mw9IYi9TSgIL0dIx2UnygTTzRflDLw/ivZuL2sYALvFuOzJ9JS0k5TeW57xvdgqFUvcb5WIv4QFw2gVXB1I018I9KxfD5dZTFQB2gGaWf8QHs+R298IcjbyPz5H4xx57TO3x0mj0PDMaSml53BK2yWW2pNiDqdrCPPOIZ8qZnK5VJLEAW7tyTYeAgni8wGmRT9oaeSn/AGhMxBZaKxG5jKMnVBnXuAtM62YMLvc2Py15R67gE3Auwlq3YZ8oz9qCHzW712bxvsbdI8VkqWaw3JghMw6YDvHfRw3TPQPpGkYSKXNSNK7fOoUSpha4J72ZbkAW56a2hBqqYIii9yY41VMVS7RzqmJUG+kNcB2EMCoO1zAbiPQ5/wBG8oUYnLOJcqr+yMvet3Rr4/DlHnfDFQyMzA6W5w5/R/iTPOnJMa6Wuo5A63+6MpTabLjFUhV/RLdBEh2vL6RIW4UeUCS19j6GPe6SUv1Vdth8o8mqpxZsxABO9hYX65RoPdpBrB8bmy17JmJT9m+6+HlHr4sTgmeXmmsjRdxaSLmOvCxy5oHVdcp3MXMCmjW0YeVNOJ0YIuLLeJTNTA+W2sdcQfUxVVo4EdZcrGvaAOOqumY29INTDcCF3isd1fOLQmdZNll9wZuZ2gDVVpzlk7ut/IjnFjDa9kQr4RXrqQoqtcHPc/n1iYxqTbBvgecSndoJNRtnVT6i9vugyQEp5k1P2kI8nUXBELWCzO0oQOctiPce9f8AqI90MmBTA8sym2fbzIjkzR1lR6mGW0b+0IiNa1jtHpvC09lphMb7JYe4G3xtHmSyiGyW1By28QbfOPQMRndhSAf8kjzJZEHxN/dHe+jzF2KeKVSK9iudD7Q567lSdm+cVK3BlyiZKYMjC6nb3HxGxEA6+qYtvvBLh7FllN2bm8l/a55DtnH3jp5RONNRSYSfuZTdGU2MW6Wq5QWxyhCtk5n2ed77EeG0BpVOb2ttuen+8WIb+HeIHlzEUnuHQ35eMXOIAv1t8mzqr6faK3J95BP+aFvCJOedLljmwB9dYZEZWrnHIZQPLsJf33jDyPwOnxfzGnBpFAsq1bMkqx1UTZolm2tyO8L8opY9S4H2MxhNp7hTbJUZ2vbSyZzmN+VoUvpGCtUSJZNgJVydt2b/AOMee10sK5Cm49beELDH2IjyJ/8ASSM57OCNNbx7tRcHYfMlowmF7qDmE1e9pvYCw8o8DmHUR0d9my/CN2rOdOho+k3DpVNViRKmFkyKxBIJViT3SQByAPvhVnuLACNZz5je1o0RCTYC5PIQ0M6yagqLCDuGYpKkZXQ3Yiza9YoUmAzHsSQo/PM2HxgqnC/6s98X62DD35GJHvh+i38Cc0b/AKaPhEgd/Zpv38v+r8IkP+PP6J9aH2XjLzC3X8gxtTsSNdxofAjeO9JIOlxrb4jQj1Bi5V0BWZcbPLSaOmpKN/Uh9Y9fZWjytJNP+hWxxCr3ubMLjz2I9fnDFwxVKsq7MB5mOWO4fnp843lut/4JndP9WT1inhEtZkwKw7oBso8PKPK8qKU2ket4sXOCbD9XNU6hlt/EIHV9SVHdsT4EGBqKDMaWdNTl8DyB8IrDS99Pxjluj0I+NFrs7vWz/wA2ipVzJjDUEx0lmzWY2U7Ho3L3GOmXLqTofgeXuMPcP4keeTh26ZctrGK88ky1OthcDyjtWURJzD3iKk3MBlvtyjRNNWcWTG8ctWMPAtWO1Mg7TRlH8S3t8C/vtD1gFKb2YWsRY+I3EeU4RPyTpT/ZmI3owMF8U4gnTJswK7IjMSFBI3OlyPujHPhc3wdODOoRphrEZAl181OkwsP8/f8AgW+EMnGq5aOW3+HL7+0Qwsy6aZ2Eip7ErKRiGew1z5beJUFSAdrtaHrHsQly6WWWUNnvYHyFzt/D6xquqMJdtnjM6xN4wpAvaLeKVuZyVCgecUzVNt3YoyHfBsMzy5dQ7klJeSUu1rEjOdddNB0sd9IHV7KpyLy1Y9WPjztFnCM/1TtSxNg6y0B7pa5/WHwGoy9VJ8xSKTrvAWFuG5Z7XMNwj2/iIKr/AFMItYZNMysmsP3zgfwqxUf0gRXwOf2fazNysvMB1ImIVHraFvC0eS+eZTs+h3zDU8yy6+hB8RGeWKkqs1xScXslY+/SPhckSzOZ7TVRQuu4zMcuXzJjyU7wa4gq3mlHZ2ay5AWYsQF1y3udix9YDRoqUUvpGLtzlJ/LMuYyZlwBGjGMEQBR2CXZVHOGKgoFXW2p/Ov4ffA7AqcaufIeQ1PzA9YfOGsOX9ZNmgZpYRwkzuqUbXOb7giwH8V9dAerDFKO7OfJJuWiJh2CFkZpgYEqCtrHKD2gDzFtfLml28L6wA7X15dYbKqZU1xKyZbsgsNAtza/tO1gCRYlb+MAsUwibIbJNltLbcZ15dQRcN7iY1jLl7Pn6JlHjgofXG6mMQS/REr963/Rf8YxD2iLWRibVqzTCNB2sxh5TG7QD+sxu9eCskH9kTk8w2R1+Kt6wvq+rD+E/C33RtMfRT0YfEERpqq/Rh6jv9h2kmq+eU3szFym3gVYH1UQDoaYrMco9gGKqdybGLVBMKzFPRh84tUshstwhOuoBUWzNuSTpvHL5cVsmdfh5ZKEo/2C2w2dMnNlszEdpe4FwPPn4QfwrhFqum7dWHeLrbmGW8b/AKNmS3zFBcKyW7VV7xylbkHa2sU8ImVMiWZYnIq5rkCZztY6dY4XHk9SGW490Wabgp59B9YVhcyy2XmGS9x6gxrgXCn1vD+3Di5DC3ilx9with9ROlyjKFQuQltFMw6OSeS+JjTCM9PLMoVHdZr2CuBt489IWo/V55kE8M4WM7DlqldblWuvRkJBHncQhouaZcjS+sO2C0gVDK+uAKxd7ZSLbG1i1uuvhFOZgFIuYfXSbnWyoN9bjveMVFUYZ5KaTu2AKt5bTLSk1GWw2uSyrb4w04LgEtZlpiZ3uV7x2ax2G178rGKAwWjlLnWfMZtCDdLAhgwNrX3UQUqp3aNnQ6P2jDqCDcXtz1+EZ5m6SNPFSt2POD1Im07SmW4uUdCutmA0tfxUgjwjyri2vadJo0H93JZjfe7zCpH/ALQhtwHE3lzpUyYxCZAWOneC57E9SNdYC41OpVZkeTNyCbNyN2ssA2chhLYSfY20udxBgVWPy+aYgrKY3sCYL4PwzOqFLLpa+4PKCEqpo1J7OUffUD/6oK03Eayx3UljznzP9KRtycdl6hwWYKKVJZgoDO0xjplUsTp9o25dYEYnNGYSpYsiadbt+0xPnp5AQYxBp8v26OX3uXbz2vp0zC0BmrJdyPqaanW06oN/eJ2ohjs1ppwAZSbZ8qjzDo3+mHvh5qd5QDywzK4U9bE9NuR9I82qZiGbLIlCV3hoHdgbc/1jMRv1hwr5plNllhbzUQvexsSLbbA6Xvv3o5s8W3Z2+LLhor/SxgyIlPMkygi5nRyBbMxCshI8lmD3R5uZBj1eu4mkLLvVy0qcwUiUwBsy5kzgEWGg3/xmFCpx6mJJSglKvlr840xXqc/k0sjFIxYzgqBaCr41I/4OUPIH5k3jpQ18t5irLpZYe9xqBqPONGZBXh0rLmyu2TQFc6kbA63semYG3hDJWTzUT1p0cNLDWzjmFzMTm5hVLWOg0GkLNVij52z06F7nMQw1NvSNJFdUEnsJWUhddUPd0vvuPuvHXt7U6fX+HMl7mrXf+ntFBMkygstWRVsMq5l2HMC+vW8dcekJUSij2KtsdO7vZ1PUfnePHarG6hHmfXZSmYVFnyyydAQHXL3duY3sOkX8I41KGwlqJel1AsAeZA5Rx07s6tl0Gf7K1f8AxSfzPGIKf2qp/tfCJG3qTMtInlkiYomG+2UfONKqaLXH2l+cUnbve4ffGztpbxEdt9nHr0Fe3BYW6j5xxlh1BImkBtdAv4eYipKfUeYjmhYy8w1AJBufePnGHky4SN/Hg/c/0XpFS36y81+6jMPZGuw2XzgbKqHO7t/MR8oryqiwe+7C356RorWEcUrO/Fr8osyppI1Zjqf2m/GNaaxuSL6xxD2WJLbKsLk3TimuPgsUz76cz6dI45iQwA3O8b0UskhfeYtNhY5MRDj2Y55Jxijhg7S1mhpt7AgmwB566HQwwYhP7FgZLXllSAcuwN9A2Yqx1JvAhcG8/OGzgrh6XNMyTOJy5M8s5shDBgDlOxBzG48IppMwjJroDy6+Y4y91VsBa5sQNdffrBKqxajCZKqUHmrsFQ90FVIub72y6dB7oc8B4PpVs7Bnsdm2NuoA1HhHm+I0/M8yTt1hcdIqTfbFupdS5KrZSdB0EXcJlSXmoky6qzKGboCdT6R3Wl8IIYXhmZgMpIJA26kDf3wzMJY/Pmu+YTO7tkBI7oJIFrkc4HylbmbHxBb43tHq+P8AC9NPe5lZG2zJYHTa+hv6e+EninCEpMqLNLFhm10KjQD1IPoYLLaPP8Qn3cgXspIudyebHpsNOVhFtccbLlJJ0tsAfO41J8YzNplYx0l4dfZYGSm10E6QSJgztMux3vqYsTJVNb2xA6VQZVOZDfkBYRWqEKgns9v8QhJA2c5tDKzaHSLlLKkSyHvYjUGB5npYWJ18I7mqU2Jl6C2wtFak2d5E0znNtyefhpf0AMMlPTinSXPW7Mj2mS8pBC5Tnz3GhsRpyDLfeFWhreynrNy7Or2PPKRp4bQyYrj65Ssti6soXUAMxFxndrlr5RLFr97ICdI64ycopLoxcFGTb7Hyhwajqk7RpMtwV0awJHSx3FvhCfj/AAusi7K1pQ11tcDp4mAWE8QVFMD2M0qG3Wysp8crDQ+ItBWnk1VbaZUTG7IajQKpJJUWVRa17AtuAbxm8LTtvgtZVJUlyLP1j/lt6xIcfq6f+n/n/qxIdRF7jz4NEdto5I0a5tY12FryXqGWXmKgtcnmbD3nkIM0/CzZWVqyjlgkW7Scym4B2AU3FjAPDhdicgcAagkge+xBg1QU4e+WRTjzV2+bxz5nbRrjtJmU4PkAfrMVpB/D20z/AEiNKjh+hW1sTlzOuWU6W25udee3SCi4WbXyU6+UlD8wYqYsZknLldNRylShb+mMTS2UGwugG9WT5KsdpeGUH72e9/sy/wAFjh+kp/70+4KPkIwa6cT/AOa/8xEFBbDOEzKSmmdpLWpLgEd6UWWx3upXeDtNxoHBKrMte2iSxe3+WEuVNu15ju2uvfNz11hmoaCnyjKHI39tuflCdBya8TcR9rKs0qY1mDLmtYEdQu4tp74a+GOJRUzVRaOTKAlse0SX2ZUC11UA6AsRAA4Oj7SXP/UMNGDUUsMBLUKctiRvYEEj1Ag4CnYZwy2cqefPuj5Qn8W4zVy5jyv/AA6hWIHcUG26kjLvYiPQqGUqm+QeZFyfz4Qr/SDgEqZMWcQwLKASDuV++xHpC+SmuDzqfj1Ud56DyQfdBfg2tmzamWjzsy5sxUCw7ne+YinM4elcmcfyn7oYOCsKSU0yZmJIGUXsLZjc7eQirRFMcJlTdriPPuPKEPPZ3YrcKFuDYgKL2Pnf1hyarlqct7G/x/Pyi9MWVOlmVNCuh9QeoI2PiIVFvlHhb0irtM+BiS3Kn22MPWOcATQxamftE3AJAdfA/a8x6QpVOA1CEqVNxuCQD8YqzKjVqxSNVJitNnIdk+MR8NqR/dE/5l/GKsynqB/cn0J+UHAGbRGfS33xUmNNG6Ef5THIzJnT4QxFywiLFEzZnj6RgzZn5EXCbiyZQ2CtJOCTEci4VlYjqAQbfCDWL8QE5llOTnAzuQVJt2gsV5tkdVLc8g8IUlqH5rfxsR8tIjz2+yfjGzywfLIUJLhFy8SBud/yo/CJB66D0X9mQ0YDRoLmOqINyfdGW5tVBjDGRZZu4DNuDyHIXjtSVeW9iD5QCabGM4jN8hY0nETaKWIVZYi8CEmqOZEdlnL1J87wqHsWFmR0SdHBJ69BHZZyQUPZHdKxgdL+sGqGpcja/mSfmYByp6X1+6DFLikoC2vpf5QmFhSmr51slyEJuQBYE+Nt4a+HsSSWx7Q2GXQ6DY3IBJ3/AAhMTEZR2cDzuPnBH6+hQqcrX5XBhDTPRKfiaQ3sWOm5Yen5MWWxinm/qnZe8NjqDvsRsY8uky5J/ux6CCNNhsokMVAttZRA0VbN8VQJMdFYEKxAO+l9NYHtNmZTkmFdr2APluIsVT2JAtaKfbsOcC7JA9bT1BbScw13yiDeFVdakvKZqP0zLY+8g6+kDJ9QQY7ScSABvvyigDVNitcLZZak9Rn/AAMYxrEpswS86qszUMQLm1xa5NvH1gE3FLjQfO0CKziGaWuAvxMKhNoY3mHr8IrTmECJGJzW9pvSO0yaSN4loLBmJzBmi1h87u7wOrASYv4bT3EV8E/JUr5mu8aSXBi1i9HkF4HSm1i49EvsY6egRkvbWKNTSqNLRdoZ/dipUtcwiij2IiR1iQxC2I6nb1iRISKZzMbRIkAGDEiRIQEjrLiRIZLOiRYSJEgEdJUd1jESAaC2E7iHmm9hYkSJkaRKFbAioiRIlADqmKs6JEjQllJ9orNvGIkBJeo4uxIkQygfO3grhMSJDfQl2c+IthACVGYkXHoUuw1SbRznRmJCGcIkSJAB/9k="
+                  alt="Deadlifts"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 3: Deadlifts
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 4 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1dadpZha53rFQoFcwEnVTi9fijlvkqLm2SA&s"
+                  alt="Knee Jumps"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 4: Knee Jumps
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 5 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlbIs9A4kE4O98mBn15zAA0zElnxHmhQXQww&s"
+                  alt="Hip Thrust"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 5: Hip Thrust
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 6 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIur82ZtK28clux8KckG7vd7FafyJ20U0Bgw&s"
+                  alt="Leg Kicks"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 6: Leg Kicks
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 7 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="data:image/jpeg;base64,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"
+                  alt="Bulgarian Split Squat"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 7: Bulgarian Split Squat
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 8 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdyWrldekFho-4ZUKBBrT17Xhn9BvpCj9MUw&s"
+                  alt="Sumo Deadlift"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 8: Sumo Deadlift
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 9 -->
+            <div
+              class="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-orange-400 hover:-translate-y-2 transform transition duration-300 w-72"
+            >
+              <div class="flex justify-center p-4">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiRSEWQ0iQNkweuxTFy50opo3xZABe-EEZ9g&s"
+                  alt="Step Ups"
+                  class="w-32 h-32 object-cover rounded-full shadow-md"
+                />
+              </div>
+              <div class="p-5">
+                <div class="text-lg md:text-xl font-bold mb-2">
+                  Exercise 9: Step Ups
+                </div>
+                <div class="text-gray-400 text-sm">
+                  3 Sets | 10 Reps | No Rest
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END EXERCISES -->
+        </div>
+        </section>
+       
+
+      <!-- Footer-->
+      <footer class="footer bg-black text-white py-16 px-4 md:px-20">
+        <div class="flex flex-wrap gap-10 justify-between">
+          <!-- Widget 1 -->
+          <div class="footer-widget w-full md:w-[30%] space-y-4">
+            <h2 class="text-3xl font-bold text-white">
+              logo <span class="text-red-600">.</span>
+            </h2>
+            <p class="text-sm">
+              5th flora, 700/D kings road, green lane New York-1782
+            </p>
+            <p class="text-sm">+10 367 826 2567</p>
+            <p class="text-sm text-red-500">contact@carpenter.com</p>
+            <div class="flex space-x-4 pt-2 text-xl">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-pinterest"></i>
+              <i class="fab fa-youtube"></i>
+            </div>
+          </div>
+
+          <!-- Widget 2 -->
+          <div class="footer-widget w-full md:w-[30%] space-y-4">
+            <h3 class="text-lg font-bold text-red-600">Useful Links</h3>
+            <ul class="space-y-2 text-sm">
+              <li>Pricing</li>
+              <li>About</li>
+              <li>Gallery</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+
+          <!-- Widget 3 -->
+          <div class="footer-widget w-full md:w-[30%] space-y-4">
+            <h3 class="text-lg font-bold text-red-600">Subscribe</h3>
+            <div
+              class="flex items-center bg-gray-100 text-black rounded-full overflow-hidden"
+            >
+              <input
+                type="email"
+                placeholder="Enter your mail"
+                class="px-4 py-2 outline-none bg-transparent flex-1"
+              />
+              <button class="bg-red-600 text-white px-5 py-2 rounded-full">
+                Subscribe
+              </button>
+            </div>
+            <p class="text-sm text-gray-400">
+              Esteem spirit temper too say adieus who direct esteem esteems
+              luckily.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- gsap script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
+      integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- scrollTrigger script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"
+      integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- self script -->
+    <script src="/js/ForGils.js"></script>
+  </body>
+</html>

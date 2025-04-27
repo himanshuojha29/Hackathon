@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/about.css" />
+    <!-- external css -->
+    <style>
+      html,
+      body {
+        overscroll-behavior: none;
+        height: 100%;
+        width: 100%;
+      }
+
+      .page1 h1::before {
+        content: "ABOUT US.";
+        position: absolute;
+        color: #ff1414;
+        top: -4px;
+        left: -4px;
+        -webkit-text-stroke: 2px #ff1414;
+        z-index: -1;
+      }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <div
+      class="cursor h-[20px] w-[20px] bg-[#FF1414] rounded-full fixed z-[99]"
+    ></div>
+    <div
+      class="cursor-blur h-[200px] w-[200px] bg-[#FF1414] rounded-full fixed blur-[150px] z-[9]"
+    ></div>
+    <video
+      autoplay
+      muted
+      loop
+      class="fixed top-0 left-0 w-full h-full object-cover z-[-1]"
+    >
+      <source src="/video/3195530-sd_640_360_25fps.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <!---  Main ---->
+    <main class="relative bg-black bg-opacity-70">
+      <!-- nav  -->
+      <nav class="bg-transparent text-white text-sm relative">
+        <div
+          class="w-full flex items-center justify-between mx-auto py-8 px-8 md:px-16 relative"
+        >
+          <!-- Logo -->
+          <div class="flex-shrink-0 z-20">
+            <img
+              src="/images/logo2.png"
+              class="h-[3rem] w-[10rem]"
+              alt="FITCROSS LOGO"
+            />
+          </div>
+
+          <!-- Toggler for Mobile -->
+          <div class="flex md:hidden z-20">
+            <button
+              id="toggleNavbar"
+              type="button"
+              class="inline-flex items-center justify-center p-2 w-10 h-10 text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Navigation Links -->
+          <div
+            id="navbar-links"
+            class="hidden flex-col md:flex md:flex-row md:items-center md:justify-center space-y-4 md:space-y-0 md:space-x-8 w-full md:w-auto bg-[#FF1414] md:bg-transparent absolute md:static left-0 mt-4 md:mt-0 p-4 md:p-0"
+          >
+            <ul class="flex flex-col md:flex-row text-center md:space-x-8">
+              <li>
+                <a
+                  href="/html/index.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/html/About.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/html/Services.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/html/Meals.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >Meals</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Login Button -->
+          <div class="hidden md:flex z-20">
+            <button
+              id="openLogin"
+              class="bg-transparent text-xl hover:bg-[#e01010] text-white font-semibold px-6 py-3 rounded-md"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- pagre 1 -->
+      <section
+        class="page1 w-full h-[80vh] relative flex flex-col items-center justify-center text-center px-4 z-1"
+      >
+        <h1
+          class="relative text-4xl sm:text-5xl md:text-6xl lg:text-[90px] text-[#fff] font-black leading-tight"
+        >
+          ABOUT US.
+        </h1>
+        <h2
+          class="text-sm sm:text-base md:text-lg font-extrabold mt-2 mb-4 uppercase"
+        >
+          <!-- Welcome to Gym Family own! -->
+        </h2>
+        <p
+          class="text-sm sm:text-base md:text-lg font-medium w-full sm:w-[80%] md:w-[60%] lg:w-[40%] text-white"
+        >
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. In eveniet
+          dolorum aliquam eligendi asperiores tempore quasi unde perferendis
+          nostrum explicabo! Aliquam possimus unde, incidunt doloremque eius
+          quod?
+        </p>
+        <button
+          class="bg-[#FF1414] px-6 py-3 mt-8 hover:bg-transparent hover:text-[#FF1414] transition duration-300 hover: border border-[#FF1414]"
+        >
+          Join us
+        </button>
+      </section>
+
+      <!-- pagre 2 -->
+      <section class="text-white py-16">
+        <div class="text-center mb-10">
+          <h2 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+            We offer something for <br class="hidden sm:block" />
+            everybody
+          </h2>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 px-4">
+          <!-- Card -->
+          <div
+            class="relative w-full sm:w-[45%] md:w-[22%] h-60 rounded-xl overflow-hidden"
+          >
+            <img
+              src="/images/about1.png"
+              alt="CrossFit"
+              class="w-full h-full object-cover opacity-60"
+            />
+            <div
+              class="absolute inset-0 flex items-center bg-[#687862] bg-opacity-70 justify-center p-4 text-center text-2xl font-bold"
+            >
+              CrossFit<br />Group<br />Classes
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div
+            class="relative w-full sm:w-[45%] md:w-[22%] h-60 rounded-xl overflow-hidden"
+          >
+            <img
+              src="/images/about2.png"
+              alt="Strength Training"
+              class="w-full h-full object-cover opacity-60"
+            />
+            <div
+              class="absolute inset-0 flex items-center bg-[#687862] bg-opacity-70 justify-center p-4 text-center text-2xl font-bold"
+            >
+              Strength<br />Training
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div
+            class="relative w-full sm:w-[45%] md:w-[22%] h-60 rounded-xl overflow-hidden"
+          >
+            <img
+              src="/images/about3.png"
+              alt="Personal Training"
+              class="w-full h-full object-cover opacity-60"
+            />
+            <div
+              class="absolute inset-0 flex items-center bg-[#687862] bg-opacity-70 justify-center p-4 text-center text-2xl font-bold"
+            >
+              Personal<br />Training
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div
+            class="relative w-full sm:w-[45%] md:w-[22%] h-60 rounded-xl overflow-hidden"
+          >
+            <img
+              src="/images/about4.png"
+              alt="Member Events"
+              class="w-full h-full object-cover opacity-60"
+            />
+            <div
+              class="absolute inset-0 flex items-center bg-[#687862] bg-opacity-70 justify-center p-4 text-center text-2xl font-bold"
+            >
+              Member<br />Only<br />Events
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--page 3-->
+      <section class="bg-black text-white py-16 px-4">
+        <div
+          class="flex flex-col-reverse lg:flex-row items-center max-w-7xl mx-auto gap-10"
+        >
+          <!-- Left: Text Content -->
+          <div class="left lg:w-1/2 px-10 w-full">
+            <div
+              class="inline-block px-4 py-2 border border-[#FF1414] rounded-md text-[#FF1414] text-sm mb-4"
+            >
+              Group CrossFit Classes
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 leading-snug">
+              Get fit while having fun<br />with our group CrossFit classes
+            </h2>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-[#FF1414]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.879-7.879a1 1 0 011.414 0z"
+                  />
+                </svg>
+                <span>Just 30 minutes long</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-[#FF1414]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.879-7.879a1 1 0 011.414 0z"
+                  />
+                </svg>
+                <span>Warm up & workout included</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-[#FF1414]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.879-7.879a1 1 0 011.414 0z"
+                  />
+                </svg>
+                <span>Fun is guaranteed</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right: Image -->
+          <div class="right lg:w-1/2 w-full h-[80vh] overflow-hidden">
+            <img
+              src="/images/about1.png"
+              alt="CrossFit Class"
+              class="w-full h-full rounded-xl object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!--page 4-->
+      <section class="bg-black text-white py-16 px-4">
+        <div
+          class="flex flex-col lg:flex-row items-center max-w-7xl mx-auto gap-10"
+        >
+          <!-- Left: Image -->
+          <div
+            class="left1 lg:w-1/2 w-full h-[80vh] rounded-xl overflow-hidden"
+          >
+            <img
+              src="/images/about2.png"
+              alt="Strength Training"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- Right: Text Content -->
+          <div class="right1 lg:w-1/2 w-full px-10">
+            <div
+              class="inline-block px-4 py-2 border border-[#FF1414] text-[#FF1414] rounded-md text-sm mb-4"
+            >
+              Strength Training
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 leading-snug">
+              Crush any strength program with our suite of strength equipment
+            </h2>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-[#FF1414]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.879-7.879a1 1 0 011.414 0z"
+                  />
+                </svg>
+                <span>Fully fitted powerlifting and strongman section</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-[#FF1414]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.879-7.879a1 1 0 011.414 0z"
+                  />
+                </svg>
+                <span>Olympic lifting platforms, weights, and bars</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-[#FF1414]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.879-7.879a1 1 0 011.414 0z"
+                  />
+                </svg>
+                <span>Dumbbells ranging 5lbs–250lbs</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!--page 5-->
+      <section class="bg-black text-white py-16 px-4">
+        <div
+          class="flex flex-col lg:flex-row items-center max-w-7xl mx-auto gap-10"
+        >
+          <!-- Left: Text Content -->
+          <div class="left2 lg:w-1/2 px-10 w-full">
+            <div
+              class="inline-block px-4 py-2 border border-[#FF1414] text-[#FF1414] rounded-md text-sm mb-4"
+            >
+              Personal Training
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 leading-snug">
+              Be guided every step of the way with one of our world class
+              coaches
+            </h2>
+
+            <!-- Info Box -->
+            <div class="bg-neutral-800 text-white rounded-xl p-4 mb-6">
+              <p class="text-base">
+                We have coaches in each one of the following categories:
+              </p>
+            </div>
+
+            <!-- Bullet Points -->
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-[#FF1414]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.879-7.879a1 1 0 011.414 0z"
+                  />
+                </svg>
+                <span>Weightloss</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-[#FF1414]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.879-7.879a1 1 0 011.414 0z"
+                  />
+                </svg>
+                <span>Competitive CrossFit</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-[#FF1414]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.879-7.879a1 1 0 011.414 0z"
+                  />
+                </svg>
+                <span>Powerlifting</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right: Image -->
+          <div
+            class="right2 lg:w-1/2 w-full rounded-2xl h-[80vh] overflow-hidden"
+          >
+            <img
+              src="/images/about3.png"
+              alt="Personal Training"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!--page 6-->
+      <section class="bg-black text-white py-16 px-4">
+        <div
+          class="flex flex-col lg:flex-row-reverse items-center max-w-7xl mx-auto gap-10"
+        >
+          <!-- Right: Text Content -->
+          <div class="right3 lg:w-1/2 px-10 w-full">
+            <div
+              class="inline-block px-4 py-2 border border-[#FF1414] text-[#FF1414] rounded-full text-sm mb-4"
+            >
+              Member Only Events
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 leading-snug">
+              Make new friends and get competitive with fun member events
+            </h2>
+
+            <!-- Bullet Points -->
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-[#FF1414]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.879-7.879a1 1 0 011.414 0z"
+                  />
+                </svg>
+                <span>Friendly competitions</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-[#FF1414]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.879-7.879a1 1 0 011.414 0z"
+                  />
+                </svg>
+                <span>Monthly challenges</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-[#FF1414]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.879-7.879a1 1 0 011.414 0z"
+                  />
+                </svg>
+                <span>Summer potlucks and games</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Left: Image -->
+          <div
+            class="left3 lg:w-1/2 w-full h-[80vh] rounded-2xl overflow-hidden"
+          >
+            <img
+              src="/images/about4.png"
+              alt="Member Only Events"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!--page 7-->
+
+      <!-- Footer-->
+      <footer class="footer bg-black text-white py-16 px-4 md:px-20">
+        <div class="flex flex-wrap gap-10 justify-between">
+          <!-- Widget 1 -->
+          <div class="footer-widget w-full md:w-[30%] space-y-4">
+            <h2 class="text-3xl font-bold text-white">
+              logo <span class="text-red-600">.</span>
+            </h2>
+            <p class="text-sm">
+              5th flora, 700/D kings road, green lane New York-1782
+            </p>
+            <p class="text-sm">+10 367 826 2567</p>
+            <p class="text-sm text-red-500">contact@carpenter.com</p>
+            <div class="flex space-x-4 pt-2 text-xl">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-pinterest"></i>
+              <i class="fab fa-youtube"></i>
+            </div>
+          </div>
+
+          <!-- Widget 2 -->
+          <div class="footer-widget w-full md:w-[30%] space-y-4">
+            <h3 class="text-lg font-bold text-red-600">Useful Links</h3>
+            <ul class="space-y-2 text-sm">
+              <li>Pricing</li>
+              <li>About</li>
+              <li>Gallery</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+
+          <!-- Widget 3 -->
+          <div class="footer-widget w-full md:w-[30%] space-y-4">
+            <h3 class="text-lg font-bold text-red-600">Subscribe</h3>
+            <div
+              class="flex items-center bg-gray-100 text-black rounded-full overflow-hidden"
+            >
+              <input
+                type="email"
+                placeholder="Enter your mail"
+                class="px-4 py-2 outline-none bg-transparent flex-1"
+              />
+              <button class="bg-red-600 text-white px-5 py-2 rounded-full">
+                Subscribe
+              </button>
+            </div>
+            <p class="text-sm text-gray-400">
+              Esteem spirit temper too say adieus who direct esteem esteems
+              luckily.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- gsap script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
+      integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- scrollTrigger script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"
+      integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- self script -->
+    <script src="/js/about.js"></script>
+  </body>
+</html>

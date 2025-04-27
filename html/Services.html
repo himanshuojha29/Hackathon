@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/services.css" />
+    
+    <!-- internal css -->
+    <style>
+      html,
+      body {
+        overscroll-behavior: none;
+        height: 100%;
+        width: 100%;
+      }
+
+      .page1 h1::before {
+        content: " FITCROSS SERVICES.";
+        position: absolute;
+        color: #ff1414;
+        top: -4px;
+        left: -4px;
+        -webkit-text-stroke: 2px #ff1414;
+        z-index: -1;
+      }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <div
+      class="cursor h-[20px] w-[20px] bg-[#FF1414] rounded-full fixed z-[99]"
+    ></div>
+    <div
+      class="cursor-blur h-[200px] w-[200px] bg-[#FF1414] rounded-full fixed blur-[150px] z-[9]"
+    ></div>
+    <video
+      autoplay
+      muted
+      loop
+      class="fixed top-0 left-0 w-full h-full object-cover z-[-1]"
+    >
+      <source src="/video/3195530-sd_640_360_25fps.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <!---  Main ---->
+    <main class="relative bg-black bg-opacity-70">
+      <!-- nav  -->
+      <nav class="bg-transparent text-white text-sm relative">
+        <div
+          class="w-full flex items-center justify-between mx-auto py-8 px-8 md:px-16 relative"
+        >
+          <!-- Logo -->
+          <div class="flex-shrink-0 z-20">
+            <img
+              src="/images/logo2.png"
+              class="h-[3rem] w-[10rem]"
+              alt="FITCROSS LOGO"
+            />
+          </div>
+
+          <!-- Toggler for Mobile -->
+          <div class="flex md:hidden z-20">
+            <button
+              id="toggleNavbar"
+              type="button"
+              class="inline-flex items-center justify-center p-2 w-10 h-10 text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Navigation Links -->
+          <div
+            id="navbar-links"
+            class="hidden flex-col md:flex md:flex-row md:items-center md:justify-center space-y-4 md:space-y-0 md:space-x-8 w-full md:w-auto bg-[#FF1414] md:bg-transparent absolute md:static left-0 mt-4 md:mt-0 p-4 md:p-0"
+          >
+            <ul class="flex flex-col md:flex-row text-center md:space-x-8">
+              <li>
+                <a
+                  href="/html/index.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/html/About.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/html/Services.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/html/Meals.html"
+                  class="block py-2 px-4 text-white hover:text-[#FF1414] md:text-[19px]"
+                  >Meals</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Login Button -->
+          <div class="hidden md:flex z-20">
+            <button
+              id="openLogin"
+              class="bg-transparent text-xl hover:bg-[#e01010] text-white font-semibold px-6 py-3 rounded-md"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!-- pagre 1 -->
+      <section
+        class="page1 w-full h-[80vh] relative flex flex-col items-center justify-center text-center px-4 z-1"
+      >
+        <h1
+          class="relative text-4xl sm:text-5xl md:text-6xl lg:text-[90px] text-[#fff] font-black leading-tight"
+        >
+          FITCROSS SERVICES.
+        </h1>
+
+        <p
+          class="text-sm sm:text-base py-5 md:text-lg font-medium w-full sm:w-[80%] md:w-[60%] lg:w-[40%] text-white"
+        >
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. In eveniet
+          dolorum aliquam eligendi asperiores tempore quasi unde perferendis
+          nostrum explicabo! Aliquam possimus unde, incidunt doloremque eius
+          quod?
+        </p>
+        <button
+          class="bg-[#FF1414] px-6 py-3 mt-8 hover:bg-transparent hover:text-[#FF1414] transition duration-300 hover: border border-[#FF1414]"
+        >
+          Join us
+        </button>
+      </section>
+      <!-- page2-->
+      <section class="text-white py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+          <h2 class="text-4xl md:text-5xl font-extrabold mb-4">OUR PRICING</h2>
+          <p class="text-gray-300 text-base md:text-lg mb-12">
+            There are many variations of passages of lorem Ipsum available, but
+            the majority have suffered alteration.
+          </p>
+
+          <div class="flex flex-col md:flex-row md:justify-center gap-8">
+            <!-- Card -->
+            <div
+              class="bg-[#1f1f1f] w-full md:w-1/3 flex flex-col items-center p-10 hover:border hover:border-red-600 hover:text-red-600"
+            >
+              <h3 class="text-2xl font-extrabold mb-2">BEGINNER</h3>
+              <p class="text-red-600 text-xl font-semibold mb-6">$45/m</p>
+              <div class="border-t border-gray-700 w-full my-4"></div>
+              <ul class="space-y-3 text-sm font-semibold mb-8">
+                <li>24h unlimited access</li>
+                <li>Trainer Advice</li>
+                <li class="text-gray-400">Locker + Bathroom</li>
+                <li class="text-gray-400">Personal trainer</li>
+              </ul>
+              <button
+                class="bg-red-600 text-white font-bold px-8 py-3 hover:bg-transparent hover:border hover:border-red-600 hover:text-red-600 transition duration-300"
+              >
+                JOIN NOW
+              </button>
+            </div>
+
+            <!-- Card -->
+            <div
+              class="bg-[#1f1f1f] w-full md:w-1/3 flex flex-col items-center p-10 hover:border hover:border-red-600 hover:text-red-600"
+            >
+              <h3 class="text-2xl font-extrabold mb-2">EXPERT</h3>
+              <p class="text-red-600 text-xl font-semibold mb-6">$45/m</p>
+              <div class="border-t border-gray-700 w-full my-4"></div>
+              <ul class="space-y-3 text-sm font-semibold mb-8">
+                <li>24h unlimited access</li>
+                <li>Trainer Advice</li>
+                <li class="text-gray-400">Locker + Bathroom</li>
+                <li class="text-gray-400">Personal trainer</li>
+              </ul>
+              <button
+                class="bg-red-600 text-white font-bold px-8 py-3 hover:bg-transparent hover:border hover:border-red-600 hover:text-red-600 transition duration-300"
+              >
+                JOIN NOW
+              </button>
+            </div>
+
+            <!-- Card -->
+            <div
+              class="bg-[#1f1f1f] w-full md:w-1/3 flex flex-col items-center p-10 hover:border hover:border-red-600 hover:text-red-600"
+            >
+              <h3 class="text-2xl font-extrabold mb-2">PRO</h3>
+              <p class="text-red-600 text-xl font-semibold mb-6">$45/m</p>
+              <div class="border-t border-gray-700 w-full my-4"></div>
+              <ul class="space-y-3 text-sm font-semibold mb-8">
+                <li>24h unlimited access</li>
+                <li>Trainer Advice</li>
+                <li class="text-gray-400">Locker + Bathroom</li>
+                <li class="text-gray-400">Personal trainer</li>
+              </ul>
+              <button
+                class="bg-red-600 text-white font-bold px-8 py-3 hover:bg-transparent hover:border hover:border-red-600 hover:text-red-600 transition duration-300"
+              >
+                JOIN NOW
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- page3-->
+      <section class="bg-black text-white py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+          <h2 class="text-4xl md:text-5xl font-extrabold mb-4">OUR TRAINERS</h2>
+          <p class="text-gray-300 text-base md:text-lg mb-12">
+            There are many variations of passages of lorem Ipsum available, but
+            the majority have suffered alteration.
+          </p>
+
+          <div
+            class="flex flex-col md:flex-row justify-center items-center gap-8"
+          >
+            <!-- Trainer Card -->
+            <div class="card5 relative w-full md:w-1/3 overflow-hidden group">
+              <img
+                src="/images/traner5.webp"
+                alt="Trainer"
+                class="w-full h-auto object-cover"
+              />
+
+              <!-- Overlay -->
+              <div
+                class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              >
+                <div class="flex space-x-6 text-white text-2xl">
+                  <a href="#" class="hover:text-blue-500"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="#" class="hover:text-pink-500"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                  <a href="#" class="hover:text-sky-400"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                </div>
+              </div>
+
+              <h3 class="text-xl font-bold mt-4 text-white">Jessica Mino</h3>
+            </div>
+
+            <!-- Repeat for other trainers -->
+            <div class="card5 relative w-full md:w-1/3 overflow-hidden group">
+              <img
+                src="/images/traner2.webp"
+                alt="Trainer"
+                class="w-full h-auto object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              >
+                <div class="flex space-x-6 text-white text-2xl">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mt-4 text-white">Amit Khan</h3>
+            </div>
+
+            <div class="card5 relative w-full md:w-1/3 overflow-hidden group">
+              <img
+                src="/images/traner4.webp"
+                alt="Trainer"
+                class="w-full h-auto object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              >
+                <div class="flex space-x-6 text-white text-2xl">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mt-4 text-white">Paulo Rolac</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- page4 -->
+
+      <!-- Footer-->
+      <footer class="footer bg-black text-white py-16 px-4 md:px-20">
+        <div class="flex flex-wrap gap-10 justify-between">
+          <!-- Widget 1 -->
+          <div class="footer-widget w-full md:w-[30%] space-y-4">
+            <h2 class="text-3xl font-bold text-white">
+              logo <span class="text-red-600">.</span>
+            </h2>
+            <p class="text-sm">
+              5th flora, 700/D kings road, green lane New York-1782
+            </p>
+            <p class="text-sm">+10 367 826 2567</p>
+            <p class="text-sm text-red-500">contact@carpenter.com</p>
+            <div class="flex space-x-4 pt-2 text-xl">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-pinterest"></i>
+              <i class="fab fa-youtube"></i>
+            </div>
+          </div>
+
+          <!-- Widget 2 -->
+          <div class="footer-widget w-full md:w-[30%] space-y-4">
+            <h3 class="text-lg font-bold text-red-600">Useful Links</h3>
+            <ul class="space-y-2 text-sm">
+              <li>Pricing</li>
+              <li>About</li>
+              <li>Gallery</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+
+          <!-- Widget 3 -->
+          <div class="footer-widget w-full md:w-[30%] space-y-4">
+            <h3 class="text-lg font-bold text-red-600">Subscribe</h3>
+            <div
+              class="flex items-center bg-gray-100 text-black rounded-full overflow-hidden"
+            >
+              <input
+                type="email"
+                placeholder="Enter your mail"
+                class="px-4 py-2 outline-none bg-transparent flex-1"
+              />
+              <button class="bg-red-600 text-white px-5 py-2 rounded-full">
+                Subscribe
+              </button>
+            </div>
+            <p class="text-sm text-gray-400">
+              Esteem spirit temper too say adieus who direct esteem esteems
+              luckily.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- gsap script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
+      integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- scrollTrigger script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"
+      integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- self script -->
+    <script src="/js/services.js"></script>
+  </body>
+</html>
