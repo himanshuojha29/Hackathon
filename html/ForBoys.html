@@ -29,6 +29,23 @@
         -webkit-text-stroke: 2px #ff1414;
         z-index: -1;
       }
+
+      
+      *::selection {
+        background-color: #fff;
+        color: #95c11e;
+      }
+
+      body::-webkit-scrollbar {
+        display: block;
+        width: 8px;
+        background: linear-gradient(to left bottom, #000, #000);
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: #FF1414;
+        border-radius: 50px;
+      }
     </style>
     <title></title>
   </head>
@@ -329,7 +346,7 @@
             <!-- Login Button -->
             <button
               id="openLogin"
-              class="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition-all mr-3"
+              class="border-[#FF1414] rounded-xl text-base text-white px-6 py-3 mr-2 hover:bg-transparent hover:text-[#FF1414] transition duration-300 hover: border border-[#FF1414]"
             >
               Login
             </button>
@@ -337,7 +354,7 @@
             <!-- Register Button -->
             <button
               id="openModal"
-              class="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition-all"
+              class="bg-[#FF1414] rounded-xl text-base text-white px-6 py-3 hover:bg-transparent hover:text-[#FF1414] transition duration-300 hover: border border-[#FF1414]"
             >
               Register
             </button>
@@ -776,11 +793,15 @@
         <div class="flex flex-wrap gap-10 justify-between">
           <!-- Widget 1 -->
           <div class="footer-widget w-full md:w-[30%] space-y-4">
-            <h2 class="text-3xl font-bold text-white">
-              logo <span class="text-red-600">.</span>
-            </h2>
+            <div class="flex-shrink-0 z-20">
+              <img
+                src="/images/logo2.png"
+                class="h-[3rem] w-[10rem]"
+                alt="FITCROSS LOGO"
+              />
+            </div>
             <p class="text-sm">
-              5th flora, 700/D kings road, green lane New York-1782
+              5th flora, 700/D kings road, green lane Bhopal-462022
             </p>
             <p class="text-sm">+10 367 826 2567</p>
             <p class="text-sm text-red-500">contact@carpenter.com</p>
@@ -797,10 +818,10 @@
           <div class="footer-widget w-full md:w-[30%] space-y-4">
             <h3 class="text-lg font-bold text-red-600">Useful Links</h3>
             <ul class="space-y-2 text-sm">
-              <li>Pricing</li>
+              <li>Home</li>
               <li>About</li>
-              <li>Gallery</li>
-              <li>Contact</li>
+              <li>Services</li>
+              <li>Meals</li>
             </ul>
           </div>
 

@@ -11,12 +11,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/Meals.css" />
-    <!-- intenal css -->
+    <link rel="stylesheet" href="/css/services.css" />
+    <!-- internal css -->
     <style>
       html,
       body {
@@ -25,11 +21,8 @@
         width: 100%;
       }
 
-      :root {
-        --main-orange: #ff1414;
-      }
       .page1 h1::before {
-        content: "FITCROSS MEALS";
+        content: "  FITCROSS SUBSCRIPTION";
         position: absolute;
         color: #ff1414;
         top: -4px;
@@ -38,7 +31,6 @@
         z-index: -1;
       }
 
-      
       *::selection {
         background-color: #fff;
         color: #95c11e;
@@ -51,11 +43,10 @@
       }
 
       body::-webkit-scrollbar-thumb {
-        background-color: #FF1414;
+        background-color: #ff1414;
         border-radius: 50px;
       }
     </style>
-    
     <title></title>
   </head>
   <body>
@@ -275,8 +266,8 @@
 
     <!---  Main ---->
     <main class="relative bg-black bg-opacity-70">
-       <!-- nav  -->
-       <nav class="bg-transparent fixed text-white text-sm z-[99999] w-full">
+      <!-- nav  -->
+      <nav class="bg-transparent fixed text-white text-sm z-[99999] w-full">
         <div
           class="w-full flex items-center justify-between mx-auto py-8 px-8 md:px-16 relative"
         >
@@ -370,96 +361,119 @@
           </div>
         </div>
       </nav>
-
       <!-- pagre 1 -->
       <section
-        class="page1 w-full h-[90vh] relative flex flex-col items-center justify-center text-center px-4 z-1"
+        class="page1 w-full h-[100vh] relative flex flex-col items-center justify-center text-center px-4 z-1"
       >
         <h1
-          class="relative text-4xl sm:text-5xl md:text-6xl lg:text-[90px] text-[#fff] font-black tracking-widest"
+          class="relative text-4xl sm:text-5xl md:text-6xl lg:text-[90px] text-[#fff] font-black leading-tight"
         >
-          FITCROSS MEALS
+          FITCROSS SUBSCRIPTION
         </h1>
+
         <p
-          class="text-sm sm:text-base md:text-lg pt-5 w-full sm:w-[80%] md:w-[60%] lg:w-[60%] text-white"
+          class="text-sm sm:text-base py-5 md:text-lg font-medium w-full sm:w-[80%] md:w-[60%] lg:w-[40%] text-white"
         >
-          Achieve your goals with intelligent BMI insights and custom meals.
-          Designed for both men and women, with calorie-focused plans to suit
-          every lifestyle. Elevate your health with expert-driven nutrition and
-          fitness guidance. Start your transformation — stronger, healthier, and
-          unstoppable.
+          From BMI to calorie needs, personalized workouts to balanced meals —
+          everything you need to own your fitness journey
         </p>
         <!-- <button
-          class="border-[#FF1414] rounded-xl text-white px-6 py-3 mt-8 hover:bg-transparent hover:text-[#FF1414] transition duration-300 hover: border border-[#FF1414]"
+          class="bg-[#FF1414] px-6 py-3 mt-8 hover:bg-transparent hover:text-[#FF1414] transition duration-300 hover: border border-[#FF1414]"
         >
           Join us
         </button> -->
       </section>
-
-      <!-- page2 -->
-      <section class="bg-black font-sans text-white">
-        <div class="container mx-auto px-6 py-12">
-          <h1
-            class="text-4xl font-bold text-center"
-            style="color: var(--main-orange)"
-          >
-            Meal Plan Finder
-          </h1>
-
-          <!-- Toggle Veg/Non-Veg Mode -->
-          <div class="flex justify-center mt-8">
-            <button
-              id="vegButton"
-              class="bg-[var(--main-orange)] text-black px-6 py-2 rounded-l-lg font-semibold hover:bg-white hover:text-black"
-            >
-              Veg
-            </button>
-            <button
-              id="nonVegButton"
-              class="bg-[var(--main-orange)] text-black px-6 py-2 rounded-r-lg font-semibold hover:bg-white hover:text-black"
-            >
-              Non-Veg
-            </button>
+      <!-- page2-->
+      <section class="bg-black text-white font-sans">
+      
+        <!-- Hero Section -->
+        <section class="flex flex-col md:flex-row items-center justify-center text-center md:text-left px-6 py-20 bg-[#111111] gap-10">
+          <div class="max-w-lg h-[80vh] flex flex-col justify-center">
+            <h1 class="text-5xl font-bold mb-4 text-[#f14141]">Advance Plan</h1>
+            <p class="text-gray-400 mb-6">Perfect for individuals who want a fast, secure, and private connection — absolutely free forever. No payment required.</p>
+            <a href="#subscribe" class="bg-[#f14141] py-3 px-8 rounded-full hover:bg-[#d63737] transition text-white">Get Started Free</a>
           </div>
-
-          <!-- Search Bar -->
-          <div class="flex justify-center my-8">
-            <input
-              type="text"
-              id="searchInput"
-              placeholder="Search meal..."
-              class="w-full max-w-lg p-4 bg-black border border-[var(--main-orange)] text-white rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--main-orange)] transition ease-in-out duration-200"
-            />
+      
+          <div class="h-[80vh] w-full max-w-md flex items-center">
+            <img src="https://images.pexels.com/photos/3490348/pexels-photo-3490348.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Secure Connection" class="rounded-xl shadow-lg w-full h-full object-cover">
           </div>
-
-          <!-- Meal Table -->
-          <div class="overflow-x-auto rounded-lg shadow-lg">
-            <table class="min-w-full bg-black rounded-lg">
-              <thead class="bg-[var(--main-orange)] text-black">
-                <tr>
-                  <th class="py-4 px-6 text-lg font-semibold text-left">
-                    Meal
-                  </th>
-                  <th class="py-4 px-6 text-lg font-semibold text-left">
-                    Calories
-                  </th>
-                  <th class="py-4 px-6 text-lg font-semibold text-left">
-                    Protein (g)
-                  </th>
-                  <th class="py-4 px-6 text-lg font-semibold text-left">
-                    Carbs (g)
-                  </th>
-                  <th class="py-4 px-6 text-lg font-semibold text-left">
-                    Fats (g)
-                  </th>
-                </tr>
-              </thead>
-              <tbody id="mealTable">
-                <!-- Meals will be dynamically populated -->
-              </tbody>
-            </table>
+        </section>
+      
+        <!-- What's Included Section -->
+        <section class="py-16 px-6 bg-black">
+          <div class="max-w-5xl mx-auto flex flex-col items-center">
+            <h2 class="text-4xl font-bold text-[#f14141] mb-12 text-center">What's Included</h2>
+      
+            <!-- Features List -->
+            <div class="flex flex-col md:flex-row md:space-x-20 space-y-8 md:space-y-0 w-full justify-center text-gray-300">
+              
+              <!-- Left Features -->
+              <div class="flex flex-col space-y-6 items-start">
+                <div class="flex items-center gap-3">
+                  <span class="text-purple-400 text-2xl">✔</span>
+                  <span>1 Secure Device Connection</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="text-purple-400 text-2xl">✔</span>
+                  <span>Unlimited Basic Bandwidth</span>
+                </div>
+              </div>
+      
+              <!-- Right Features -->
+              <div class="flex flex-col space-y-6 items-start">
+                <div class="flex items-center gap-3">
+                  <span class="text-purple-400 text-2xl">✔</span>
+                  <span>Access to Free Global Servers</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="text-purple-400 text-2xl">✔</span>
+                  <span>No Credit Card Required</span>
+                </div>
+              </div>
+      
+            </div>
+      
+            <!-- Features Image -->
+            <div class="flex justify-center mt-16">
+            </div>
           </div>
-        </div>
+        </section>
+      
+        <!-- FAQ Section -->
+        <section class="py-16 px-6 bg-[#1a1a1a]">
+          <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center text-[#f14141]">Frequently Asked Questions</h2>
+            <div class="space-y-8 text-gray-300">
+      
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Is the Personal plan really free forever?</h3>
+                <p>Yes, we believe in open and secure internet access for everyone. You’ll never be charged for Personal features.</p>
+              </div>
+      
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Can I connect multiple devices?</h3>
+                <p>The Personal plan supports 1 device. To connect more, upgrade to Starter or Premium plans.</p>
+              </div>
+      
+              <div>
+                <h3 class="font-semibold text-lg mb-2">What type of customer support is included?</h3>
+                <p>Personal plan users get access to community forums. Priority and 24/7 support are available in paid plans.</p>
+              </div>
+      
+            </div>
+          </div>
+        </section>
+      
+        <!-- Subscribe CTA -->
+        <section id="subscribe" class="py-20 flex flex-col items-center justify-center text-center bg-black px-6">
+          <h2 class="text-4xl font-bold mb-6 text-[#f14141]">Secure your browsing today</h2>
+          <a href="#" class="bg-[#f14141] py-4 px-10 rounded-full hover:bg-[#d63737] transition text-lg text-white">
+            Get Started for Free
+          </a>
+        </section>
+      
+      
       </section>
 
       <!-- Footer-->
@@ -540,6 +554,6 @@
     ></script>
 
     <!-- self script -->
-    <script src="/js/Meals.js"></script>
+    <script src="/js/services.js"></script>
   </body>
 </html>

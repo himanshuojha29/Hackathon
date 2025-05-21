@@ -80,7 +80,6 @@ function calculateBMI() {
   pointer.setAttribute("transform", `rotate(${angle}, 150, 150)`);
 }
 
-
 // login.js
 
 const openLogin = document.getElementById("openLogin");
@@ -104,24 +103,23 @@ loginModal.addEventListener("click", (e) => {
   }
 });
 
-
 // registration page
-const openBtn = document.getElementById('openModal');
-const closeBtn = document.getElementById('closeModal');
-const modal = document.getElementById('modal');
+const openBtn = document.getElementById("openModal");
+const closeBtn = document.getElementById("closeModal");
+const modal = document.getElementById("modal");
 
-openBtn.addEventListener('click', () => {
-  modal.classList.remove('hidden');
+openBtn.addEventListener("click", () => {
+  modal.classList.remove("hidden");
 });
 
-closeBtn.addEventListener('click', () => {
-  modal.classList.add('hidden');
+closeBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
 });
 
 // Close modal if click outside of the form
-window.addEventListener('click', (e) => {
+window.addEventListener("click", (e) => {
   if (e.target === modal) {
-    modal.classList.add('hidden');
+    modal.classList.add("hidden");
   }
 });
 
@@ -134,7 +132,7 @@ gsap.to("nav", {
   scrollTrigger: {
     trigger: "nav",
     scroller: "Body",
-    //   markers: true,
+    // //   markers: true,
     start: "top -15%",
     end: "top -11%",
     scrub: 1,
@@ -208,4 +206,22 @@ gsap.from(".card5", {
   },
 });
 
+function toggleLoginRegister() {
+  const loginRegis = document.querySelector(".loginregis");
 
+  if (window.innerWidth < 768) {
+    // mobile screen
+    loginRegis.classList.remove("hidden");
+    loginRegis.classList.add("flex");
+  } else {
+    // desktop screen
+    loginRegis.classList.add("hidden");
+    loginRegis.classList.remove("flex");
+  }
+}
+
+// Check when page loads
+toggleLoginRegister();
+
+// Also check when window is resized
+window.addEventListener("resize", toggleLoginRegister);

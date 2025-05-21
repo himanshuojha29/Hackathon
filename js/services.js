@@ -1,3 +1,4 @@
+
 // navbar js
 const toggleBtn = document.getElementById("toggleNavbar");
 const navLinks = document.getElementById("navbar-links");
@@ -31,7 +32,22 @@ h4all.forEach(function (elem) {
   });
 });
 
+
 // gsap code start
+gsap.to("nav", {
+  backgroundColor: "#000",
+  duration: 0.5,
+  height: "110px",
+  scrollTrigger: {
+    trigger: "nav",
+    scroller: "Body",
+    //   markers: true,
+    start: "top -15%",
+    end: "top -11%",
+    scrub: 1,
+  },
+});
+
 gsap.to("main", {
   backgroundColor: "#000",
   scrollTrigger: {
@@ -43,77 +59,112 @@ gsap.to("main", {
     scrub: 2,
   },
 });
-
-
-gsap.from(".card5", {
-    opacity: 0,
-    y: 50,
-    duration: 3,
-    stagger: 0.3,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".card5",
-    //   start: "top 80%",
-    //   toggleActions: "play none none none",
-      scrub: 1,
-    },
-   
-  });
-
-// select card
-const card1 = document.getElementById("card1");
-const bmiModal = document.getElementById("bmiModal");
-
-card1.addEventListener("click", () => {
-  bmiModal.classList.remove("hidden");
+gsap.from(".left", {
+  x: -100,
+  opacity: 0,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".left",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    scrub: 2,
+  },
 });
 
-function closeModal() {
-  bmiModal.classList.add("hidden");
-}
+gsap.from(".right", {
+  x: 100,
+  opacity: 0,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".right",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    scrub: 2,
+  },
+});
 
-// bmi code
-function calculateBMI() {
-  const height = parseFloat(document.getElementById("height").value);
-  const weight = parseFloat(document.getElementById("weight").value);
-  const age = parseInt(document.getElementById("age").value);
-  const gender = document.querySelector("input[name='gender']:checked")?.value;
+gsap.from(".left1", {
+  x: -100,
+  opacity: 0,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".left1",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    scrub: 2,
+  },
+});
 
-  if (!height || !weight || !age || age < 2 || age > 120) {
-    document.getElementById("bmiResult").textContent =
-      "Please enter valid values for all fields.";
-    return;
-  }
+gsap.from(".right1", {
+  x: 100,
+  opacity: 0,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".right1",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    scrub: 2,
+  },
+});
 
-  const bmi = weight / Math.pow(height / 100, 2);
-  let category = "";
-  let color = "text-lime-400";
+gsap.from(".left2", {
+  x: -100,
+  opacity: 0,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".left2",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    scrub: 2,
+  },
+});
 
-  if (bmi < 18.5) category = "Underweight";
-  else if (bmi < 24.9) category = "Normal";
-  else if (bmi < 29.9) category = "Overweight";
-  else category = "Obese";
+gsap.from(".right2", {
+  x: 100,
+  opacity: 0,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".right2",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    scrub: 2,
+  },
+});
 
-  // Result Text
-  document.getElementById("bmiResult").innerHTML = `BMI = ${bmi.toFixed(
-    1
-  )} kg/m² <span class="${color}">(${category})</span>`;
-  document.getElementById("bmiCategory").textContent = category;
+gsap.from(".left3", {
+  x: -100,
+  opacity: 0,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".left3",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    scrub: 2,
+  },
+});
 
-  // Rotate pointer based on BMI (gauge goes from 15 to 40)
-  const pointer = document.getElementById("pointer");
-  const minBMI = 15,
-    maxBMI = 40;
-  const angle = ((bmi - minBMI) / (maxBMI - minBMI)) * 180; // 0 to 180 degrees
-  pointer.setAttribute("transform", `rotate(${angle}, 150, 150)`);
-}
+gsap.from(".right3", {
+  x: 100,
+  opacity: 0,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".right3",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    scrub: 2,
+  },
+});
 
 
-// login.js
 
-const openLogin = document.getElementById("openLogin");
-const closeLogin = document.getElementById("closeLogin");
-const loginModal = document.getElementById("loginModal");
 
 // Open login modal
 openLogin.addEventListener("click", () => {
@@ -133,17 +184,23 @@ loginModal.addEventListener("click", (e) => {
 });
 
 
-gsap.to("nav", {
-    backgroundColor: "#000",
-    duration: 0.5,
-    height: "110px",
-    scrollTrigger: {
-      trigger: "nav ",
-      scroller: "Body",
-    //   markers: true,
-      start: "top -15%",
-      end: "top -11%",
-      scrub: 1,
-    },
-  });
+// registration page
+const openBtn = document.getElementById('openModal');
+const closeBtn = document.getElementById('closeModal');
+const modal = document.getElementById('modal');
+
+openBtn.addEventListener('click', () => {
+  modal.classList.remove('hidden');
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.classList.add('hidden');
+});
+
+// Close modal if click outside of the form
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.add('hidden');
+  }
+});
 

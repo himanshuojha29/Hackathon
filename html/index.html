@@ -30,6 +30,22 @@
         -webkit-text-stroke: 2px #ff1414;
         z-index: -1;
       }
+
+      *::selection {
+        background-color: #fff;
+        color: #95c11e;
+      }
+
+      body::-webkit-scrollbar {
+        display: block;
+        width: 8px;
+        background: linear-gradient(to left bottom, #000, #000);
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: #ff1414;
+        border-radius: 50px;
+      }
     </style>
     <title></title>
   </head>
@@ -38,7 +54,7 @@
     <section>
       <div
         id="loginModal"
-        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden mx-4"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden mx-4 mt-[80px]"
       >
         <div
           class="bg-white rounded-lg shadow-lg w-full max-w-5xl flex flex-col md:flex-row overflow-hidden relative"
@@ -124,7 +140,7 @@
           <!-- Right Side (Image) -->
           <div class="hidden md:block w-full md:w-1/2">
             <img
-              src="/images/login-image.png"
+              src="/images/WhatsApp Image 2025-04-28 at 1.15.09 PM.jpeg"
               alt="Login Illustration"
               class="w-full h-full object-cover"
             />
@@ -249,9 +265,9 @@
     </video>
 
     <!---  Main ---->
-    <main class="relative bg-black bg-opacity-70">
+    <main class="bg-black bg-opacity-70">
       <!-- nav  -->
-      <nav class="bg-transparent text-white text-sm relative">
+      <nav class="bg-transparent fixed text-white text-sm z-[99] w-full">
         <div
           class="w-full flex items-center justify-between mx-auto py-8 px-8 md:px-16 relative"
         >
@@ -265,6 +281,7 @@
           </div>
 
           <!-- Toggler for Mobile -->
+
           <div class="flex md:hidden z-20">
             <button
               id="toggleNavbar"
@@ -325,12 +342,12 @@
             </ul>
           </div>
 
-          <!-- login and registrations but -->
-          <div class="hidden md:flex z-20">
+          <!-- login and registrations -->
+          <div class="loginregis hidden md:flex z-20">
             <!-- Login Button -->
             <button
               id="openLogin"
-              class="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition-all mr-3"
+              class="border-[#FF1414] rounded-xl text-base text-white px-6 py-3 mr-2 hover:bg-transparent hover:text-[#FF1414] transition duration-300 hover: border border-[#FF1414]"
             >
               Login
             </button>
@@ -338,7 +355,7 @@
             <!-- Register Button -->
             <button
               id="openModal"
-              class="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition-all"
+              class="bg-[#FF1414] rounded-xl text-base text-white px-6 py-3 hover:bg-transparent hover:text-[#FF1414] transition duration-300 hover: border border-[#FF1414]"
             >
               Register
             </button>
@@ -348,7 +365,7 @@
 
       <!-- pagre 1 -->
       <section
-        class="page1 w-full h-[80vh] relative flex flex-col items-center justify-center text-center px-4 z-1"
+        class="page1 w-full h-[100vh] relative flex flex-col items-center justify-center text-center px-4 z-1"
       >
         <h1
           class="relative text-4xl sm:text-5xl md:text-6xl lg:text-[90px] text-[#fff] font-black tracking-widest"
@@ -364,11 +381,11 @@
           fitness guidance. Start your transformation — stronger, healthier, and
           unstoppable.
         </p>
-        <button
+        <!-- <button
           class="border-[#FF1414] rounded-xl text-white px-6 py-3 mt-8 hover:bg-transparent hover:text-[#FF1414] transition duration-300 hover: border border-[#FF1414]"
         >
           Join us
-        </button>
+        </button> -->
       </section>
 
       <!-- page1.1 -->
@@ -390,7 +407,8 @@
               BMI Calculator
             </h3>
             <p class="text-sm leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              A BMI calculator quickly estimates body fat based on a person's
+              height and weight to assess overall health.
             </p>
           </div>
 
@@ -548,8 +566,9 @@
             </div>
             <h3 class="text-xl font-semibold mb-2">Nutrition</h3>
             <p class="text-sm text-gray-300 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-              venenatis, nunc a pretium viverra.
+              A nutrition calculator helps track and balance daily intake of
+              calories, macronutrients, and micronutrients for better health and
+              fitness.
             </p>
           </div>
 
@@ -562,8 +581,9 @@
             </div>
             <h3 class="text-xl font-semibold mb-2">Muscle Gain</h3>
             <p class="text-sm text-gray-300 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-              venenatis, nunc a pretium viverra.
+              A muscle gain calculator estimates the calories and nutrients
+              needed to build muscle effectively based on your body metrics and
+              activity level.
             </p>
           </div>
         </div>
@@ -581,17 +601,15 @@
           <div
             class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-4"
           >
-            <h2 class="font-extrabold text-[30px] md:text-[50px] mb-4">
-              FOR GIRLS
-            </h2>
+            <h2 class="font-extrabold text-[30px] md:text-[50px]">FOR GIRLS</h2>
             <p class="text-sm md:text-base max-w-[300px] mb-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-              vel facilis provident excepturi debitis optio!
+              "A fitness space where girls can achieve their goals, build
+              strength, and feel their best."
             </p>
             <button
-              class="bg-[#FF1414] px-6 py-3 hover:bg-transparent hover:text-[#FF1414] transition duration-300 border border-[#FF1414]"
+              class="bg-[#FF1414] px-6 py-3 rounded hover:bg-transparent hover:text-[#FF1414] transition duration-300 border border-[#FF1414]"
             >
-              <a href="/html/ForGirls.html">Join us</a>
+              <a href="/html/ForGirls.html">Explore</a>
             </button>
           </div>
           <!-- Image with hover scale -->
@@ -608,19 +626,17 @@
         >
           <!-- Content overlay -->
           <div
-            class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-4"
+            class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-3"
           >
-            <h2 class="font-extrabold text-[30px] md:text-[50px] mb-4">
-              FOR BOYS
-            </h2>
+            <h2 class="font-extrabold text-[30px] md:text-[50px]">FOR BOYS</h2>
             <p class="text-sm md:text-base max-w-[300px] mb-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-              vel facilis provident excepturi debitis optio!
+              "Strength, speed, and stamina — fitness plans made for boys who
+              want to dominate."
             </p>
             <button
-              class="bg-[#FF1414] px-6 py-3 hover:bg-transparent hover:text-[#FF1414] transition duration-300 border border-[#FF1414]"
+              class="bg-[#FF1414] px-6 py-3 rounded hover:bg-transparent hover:text-[#FF1414] transition duration-300 border border-[#FF1414]"
             >
-              <a href="/html/ForBoys.html">Join us</a>
+              <a href="/html/ForBoys.html">Explore</a>
             </button>
           </div>
           <!-- Image with hover scale -->
@@ -631,6 +647,7 @@
           />
         </div>
       </section>
+
       <!-- page3-->
       <section class="bg-black text-white py-16 px-4">
         <div
@@ -713,8 +730,8 @@
         >
           <h2 class="text-4xl md:text-5xl font-extrabold mb-7">OUR FEATURES</h2>
           <p class="text-gray-300 text-base md:text-lg mb-12">
-            There are many variations of passages of lorem Ipsum available, but
-            the majority have suffered alteration.
+            Explore our top features, including personalized plans, expert
+            guidance, and advanced tools to support your fitness journey.
           </p>
 
           <div
@@ -729,7 +746,8 @@
               ></i>
               <h3 class="text-xl font-bold mb-2">Weightlifting</h3>
               <p class="text-gray-300 text-sm">
-                There are many variations of passages of lorem Ipsum available.
+                "It challenges both body and mind, pushing limits to unlock
+                greater endurance and resilience."
               </p>
             </div>
 
@@ -742,7 +760,8 @@
               ></i>
               <h3 class="text-xl font-bold mb-2">Specific Muscles</h3>
               <p class="text-gray-300 text-sm">
-                There are many variations of passages of lorem Ipsum available.
+                "By concentrating on specific muscles, you can improve muscle
+                definition, strength. "
               </p>
             </div>
 
@@ -755,7 +774,8 @@
               ></i>
               <h3 class="text-xl font-bold mb-2">Flex Your Muscles</h3>
               <p class="text-gray-300 text-sm">
-                There are many variations of passages of lorem Ipsum available.
+                "Flexing your muscles showcases strength and tone, highlighting
+                your hard work and dedication."
               </p>
             </div>
 
@@ -768,7 +788,8 @@
               ></i>
               <h3 class="text-xl font-bold mb-2">Cardio Exercises</h3>
               <p class="text-gray-300 text-sm">
-                There are many variations of passages of lorem Ipsum available.
+                "Cardio exercises improve heart health, increase endurance, and
+                burn calories for overall fitness."
               </p>
             </div>
           </div>
@@ -792,7 +813,7 @@
           <!-- Button -->
           <div class="flex justify-center lg:justify-end">
             <a
-              href="#"
+              href="/html/Meals.html"
               class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition"
             >
               Join us
@@ -805,9 +826,9 @@
         <!-- Heading -->
         <div class="text-center mb-12">
           <h2 class="text-4xl font-bold text-red-600">Why Choose Us</h2>
-          <p class="text-lg mt-4 text-gray-300">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br />
-            sed do eiusmod tempor incididunt ut labore et
+          <p class="text-lg my-6 text-gray-300">
+            With a focus on quality, dedication, and results, we’re here to help
+            you achieve your fitness goals, no matter the challenge
           </p>
         </div>
 
@@ -821,11 +842,9 @@
                 <i class="fas fa-dumbbell"></i>
               </div>
               <div>
-                <h3 class="text-red-500 font-bold text-lg">
-                  High-Quality Equipment
-                </h3>
+                <h3 class="text-red-500 font-bold text-lg">BMI Calculator</h3>
                 <p class="text-gray-300">
-                  State-of-the-art equipment for all your workout needs.
+                  Measure Body Fat Using Height and Weight.
                 </p>
               </div>
             </div>
@@ -836,11 +855,9 @@
                 <i class="fas fa-award"></i>
               </div>
               <div>
-                <h3 class="text-red-500 font-bold text-lg">
-                  Certified Trainers
-                </h3>
+                <h3 class="text-red-500 font-bold text-lg">Meals Plans</h3>
                 <p class="text-gray-300">
-                  Train with professionals who know your goals.
+                  Nutritious meals fuel healthy living and Good.
                 </p>
               </div>
             </div>
@@ -932,11 +949,15 @@
         <div class="flex flex-wrap gap-10 justify-between">
           <!-- Widget 1 -->
           <div class="footer-widget w-full md:w-[30%] space-y-4">
-            <h2 class="text-3xl font-bold text-white">
-              logo <span class="text-red-600">.</span>
-            </h2>
+            <div class="flex-shrink-0 z-20">
+              <img
+                src="/images/logo2.png"
+                class="h-[3rem] w-[10rem]"
+                alt="FITCROSS LOGO"
+              />
+            </div>
             <p class="text-sm">
-              5th flora, 700/D kings road, green lane New York-1782
+              5th flora, 700/D kings road, green lane Bhopal-462022
             </p>
             <p class="text-sm">+10 367 826 2567</p>
             <p class="text-sm text-red-500">contact@carpenter.com</p>
@@ -953,10 +974,10 @@
           <div class="footer-widget w-full md:w-[30%] space-y-4">
             <h3 class="text-lg font-bold text-red-600">Useful Links</h3>
             <ul class="space-y-2 text-sm">
-              <li>Pricing</li>
+              <li>Home</li>
               <li>About</li>
-              <li>Gallery</li>
-              <li>Contact</li>
+              <li>Services</li>
+              <li>Meals</li>
             </ul>
           </div>
 
